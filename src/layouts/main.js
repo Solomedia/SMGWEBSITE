@@ -6,6 +6,7 @@ import Header from '../components/global/header'
 import Footer from '../components/global/footer'
 import theme from '../constants/theme-styles'
 import { ThemeProvider } from 'emotion-theming'
+import { css } from '@emotion/core'
 
 const Layout = ({ children }) => {
 
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
 			<Global styles={globalStyles}  />
 			<Header siteTitle="solo" />
-			<main className="some-class">{children}</main>
+			<main css={css`min-height: calc(100vh - 200px);`}>{children}</main>
 			<Footer />
     </ThemeProvider>
   )

@@ -6,21 +6,17 @@
 
 1.  **Install Gatsby Globally**
 
-    ```sh
-    npm install -g gatsby-cli
-    ```
+		npm install -g gatsby-cli
 
-1.  **Start developing.**
+2.  **Dependecies.**
 
-		```sh
-    npm install
-    ```
+		npm install
 
-    ```sh
-    gatsby develop
-    ```
+3.  **Start developing.**
 
-1.  **Open the source code and start editing!**
+		gatsby develop
+
+4.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
