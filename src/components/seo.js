@@ -77,7 +77,9 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,500,500i,600,700" rel="stylesheet" />
+    </Helmet>
   )
 }
 

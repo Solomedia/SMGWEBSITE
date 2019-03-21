@@ -1,20 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../layouts/main"
+import SEO from "../components/seo";
+import { P, H1, H3 } from '../utils/type';
+import {Container, Row, Col} from '../utils/grid';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+	<Layout>
+    <SEO title="Home" keywords={['solo', 'media', 'web', 'app', 'design']} />
+		<Container>
+			<Row>
+				<Col padding="30" col={12} colMd={2} colLg={4}>
+					<H1>SOLO MEDIA</H1>
+					<H3 className="big">Subtitle Big</H3>
+					<P>Welcome to Solo Media group Home Page</P>
+				</Col>
+			</Row>
+		</Container>
   </Layout>
 )
 
