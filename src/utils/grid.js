@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 
 const Container = styled.div`
   margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 ${gutterWidth};
 	max-width: ${maxWidth['xl']};
 	width: 100%;
 
@@ -49,12 +49,13 @@ const checkCol = (props, col) => {
 const colWidthMd = props => css`
   width: ${checkCol(props, 'colMd')};
 `
+
 const colWidthLg = props => css`
   width: ${checkCol(props, 'colLg')};
 `
 
 const Col = styled.div`
-	padding: 0 15px;
+	padding: 0 ${gutterWidth}px;
 	${colWidth};
 
 	@media (min-width: ${breakpoint['md'] + 'px'}) {
