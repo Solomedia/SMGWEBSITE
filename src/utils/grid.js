@@ -1,10 +1,12 @@
 import styled from "@emotion/styled"
-import { breakpoint, maxWidth, gutterWidth } from '../constants/theme-styles';
+import theme from '../constants/theme-styles'
 import { css } from '@emotion/core'
+
+const { gutterWidth, maxWidth, breakpoint } = theme;
 
 const Container = styled.div`
   margin: 0 auto;
-	padding: 0 ${gutterWidth};
+	padding: 0 ${gutterWidth}px;
 	max-width: ${maxWidth['xl']};
 	width: 100%;
 
@@ -25,7 +27,7 @@ const Row = styled.div`
 		flex-direction: column-reverse;
 	}
 
-	@media (min-width: ${breakpoint['md']}) {
+	${breakpoint['tablet']} {
 		flex-direction: row;
 
 		&.reverse {
@@ -35,36 +37,32 @@ const Row = styled.div`
 `
 
 const getWidth = val => {
-	return `${val / .12}%`;
+	return `${(val || 12) / .12}%`;
 }
 
 const colWidth = props => css`
   width: ${getWidth(props.col)};
 `
 
-const checkCol = (props, col) => {
-	return `${props[col] ? getWidth(props[col]) : colWidth}`;
-}
-
-const colWidthMd = props => css`
-  width: ${checkCol(props, 'colMd')};
-`
-
-const colWidthLg = props => css`
-  width: ${checkCol(props, 'colLg')};
-`
-
 const Col = styled.div`
 	padding: 0 ${gutterWidth}px;
 	${colWidth};
 
-	@media (min-width: ${breakpoint['md'] + 'px'}) {
-    ${colWidthMd};
-	}
+	${props => (
+		props['colMd'] && css`
+			${breakpoint['tabletOnly']} {
+				width: ${getWidth(props['colMd'])};
+			}
+		`
+	)}
 
-	@media (min-width: ${breakpoint['lg'] + 1 + 'px'}) {
-		${colWidthLg};
-	}
+	${props => (
+		props['colLg'] && css`
+			${breakpoint['desktop']} {
+				width: ${getWidth(props['colLg'])};
+			}
+		`
+	)}
 `
 // .col-xs-offset-0 need implementation
 // .col-xs-offset-1

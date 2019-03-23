@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../layouts/main"
-import SEO from "../components/seo";
-import { P, H1, H2, H3 } from '../utils/type';
-import Button from '../utils/buttons';
-import { css } from '@emotion/core';
+import SEO from "../components/seo"
+import { P, H1, H2, H3 } from '../utils/type'
+import Button from '../utils/buttons'
+import { css } from '@emotion/core'
 
 const heading = css`
 	font-weight: 300;

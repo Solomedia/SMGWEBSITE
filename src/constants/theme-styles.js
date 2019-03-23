@@ -1,31 +1,34 @@
-export const columns = 12;
-export const gutterWidth = 30;
+const columns = 12;
 
-export const breakpoint = {
-	xs: 0,
-	sm: 576,
-	md: 768,
-	lg: 1024,
-	xl: 1440
+const gutterWidth = 30;
+
+const breakpoint = {
+	phoneSmall: `@media (max-width: 576px)`,
+	phone: `@media (max-width: 768px)`,
+	tablet: `@media (min-width: 768px)`,
+	tabletOnly: `@media (min-width: 768px) and (max-width: 1023px)`,
+	desktop: `@media (min-width: 1024px)`,
+	large: `@media (min-width: 1440px)`
 };
 
-export const maxWidth = {
+const maxWidth = {
 	sm: '540px',
 	md: '720px',
 	lg: '1024px',
 	xl: '1440px'
  };
 
- export const color = {
+ const color = {
 	cerulean: '#0AB2D8',
 	doveGray: '#656565',
 	primary: '#000000',
 	secondary: '#FFFFFF',
 	tundora: '#4B4242',
-	tundoraGray: '#4C4C4C'
+	tundoraGray: '#4C4C4C',
+	lilacBush: '#A07FDA'
 };
 
-export const theme = {
+const theme = {
 	breakpoint,
 	columns,
 	color,

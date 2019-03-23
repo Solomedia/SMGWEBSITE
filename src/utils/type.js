@@ -1,9 +1,14 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 const P = styled.p`
 	color: ${props => props.theme.color.primary};
 	font-size: 18px;
 	line-height: 22px;
+
+	&.big {
+		font-size: 21px;
+		line-height: 25px;
+	}
 `
 
 const H1 = styled.h1`
