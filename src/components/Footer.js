@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import { Container, Row, Col } from '../utils/grid'
 import { P } from '../utils/type'
 import { css } from '@emotion/core'

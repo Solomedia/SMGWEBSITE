@@ -1,7 +1,8 @@
 import React from 'react'
-import LogoImg from '../../images/logo-solo-media.png'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import LogoImg from '../../images/logo-solo-media.png'
+import { H1 } from '../../utils/type'
 
 //STYLES BLOCK
 const logoContainer = props => css`
