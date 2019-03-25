@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
-import normalize from './normalizer-styles';
+import normalize from './normalizer-styles'
 
-const globalStyles = css`
+const globalStyles = props => css`
 	${normalize}
 	button,
 	input,
@@ -11,10 +11,6 @@ const globalStyles = css`
 	body {
 		font-family: 'Barlow', sans-serif;
 	}
-	button {
-		cursor: pointer;
-	}
-	button,
 	input,
 	optgroup,
 	select,
@@ -24,11 +20,16 @@ const globalStyles = css`
 			outline: 0;
 		}
 	}
+	ul {
+		list-style: none;
+	}
 	p {
 		margin: 0;
 	}
 	a {
 		text-decoration: none;
+		color: ${props.color.cerulean};
+
 		&:hover {
 			cursor: pointer;
 		}
