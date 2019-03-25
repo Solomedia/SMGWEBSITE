@@ -1,54 +1,47 @@
 import React from 'react'
 import LogoImg from '../../images/logo-solo-media.png'
 import { Link } from 'gatsby'
-import theme from '../../constants/theme-styles'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
-
-const { breakpoint } = theme;
 
 //STYLES BLOCK
-const LogoContainer = styled.div`
+const logoContainer = props => css`
 
-	${breakpoint['phone']} {
+	${props.breakpoint['phone']} {
 		width: 100%;
 	}
 `
 
-const fluidImage = css`
-	width: 100%;
-`
-
-const LogoHeader = styled.h1`
-	background-color: ${props => props.theme.color.primary};
+const logoHeader = props => css`
+	background-color: ${props.color.primary};
 	display: flex;
 	align-items: center;
 	transition: width 1s linear;
 
-	${breakpoint['phone']}{
+	${props.breakpoint['phone']}{
 		width: 150px;
     margin: 0 auto;
 	}
 
-	${breakpoint['phoneSmall']}{
+	${props.breakpoint['phoneSmall']}{
 		width: 120px;
 	}
 
-	${breakpoint['tablet']} {
+	${props.breakpoint['tablet']} {
 		margin: 0 20px;
 		min-height: 145px;
 	}
 `
+
 //END STYLES
 
-const logo = () => (
-	<LogoContainer>
-		<LogoHeader>
+const Logo = () => (
+	<div css={logoContainer}>
+		<H1 css={logoHeader}>
 			<Link to="/">
-				<img src={LogoImg} css={fluidImage} alt="" />
+				<img src={LogoImg} css={css`width: 100%;`} alt="" />
 			</Link>
-		</LogoHeader>
-	</LogoContainer>
+		</H1>
+	</div>
 )
 
-export default logo;
+export default Logo;
