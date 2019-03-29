@@ -4,8 +4,6 @@ import { css } from '@emotion/core'
 import { H2 } from '../../../utils/type'
 
 //STYLES BLOCK
-const customBreakpoint = `@media (min-width: 992px)`;
-
 const titleStyles = props => css`
 	color: ${props.color.secondary};
 	display: flex;
@@ -14,7 +12,7 @@ const titleStyles = props => css`
   align-items: center;
 
 	${props.breakpoint['phoneSmall']} {
-		font-size: 8.5vw;
+		font-size: 8vw;
     line-height: 9vh;
 	}
 
@@ -29,10 +27,10 @@ const titleStyles = props => css`
 			font-size: 21.3vw;
     	line-height: 25.8vw;
 			margin-right: 10px;
-			min-width: 90px;
+			min-width: 75px;
 		}
 
-		${customBreakpoint} {
+		${props.breakpoint['medium']} {
 			margin-right: -17px;
 		}
 	}
