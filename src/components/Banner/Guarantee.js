@@ -1,9 +1,11 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { H2 } from '../../utils/type'
 import { Link } from 'gatsby'
+
+import { H2 } from '../../utils/type'
 import Button from '../../utils/buttons'
 
+//STYLES BLOCK
 const quarantee = props => css`
 	margin-bottom: 50px;
 
@@ -15,6 +17,7 @@ const quarantee = props => css`
 		}
 	}
 `
+//END STYLES BLOCK
 
 const Guarantee = () => (
 	<React.Fragment>

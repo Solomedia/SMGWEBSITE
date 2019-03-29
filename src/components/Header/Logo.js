@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+
 import LogoImg from '../../images/logo-solo-media.png'
 import { H1 } from '../../utils/type'
 
@@ -32,7 +33,6 @@ const logoHeader = props => css`
 		min-height: 145px;
 	}
 `
-
 //END STYLES
 
 const Logo = () => (
