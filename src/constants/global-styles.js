@@ -36,7 +36,6 @@ const globalStyles = props => css`
 			cursor: pointer;
 		}
 	}
-`;
+`
 
-
-export default globalStyles;
+export default globalStyles

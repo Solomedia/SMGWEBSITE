@@ -1,12 +1,15 @@
-import React from "react"
-import Layout from "../layouts/main"
-import SEO from "../components/seo"
+import React from 'react'
+import Layout from '../layouts/main'
+import SEO from '../components/seo'
 import { P, H1, H2, H3 } from '../utils/type'
 import Button from '../utils/buttons'
 
 const StyleGuide = () => (
 	<Layout>
-    <SEO title="Style Guide" keywords={['solo', 'media', 'web', 'app', 'design']} />
+		<SEO
+			title="Style Guide"
+			keywords={['solo', 'media', 'web', 'app', 'design']}
+		/>
 		<P>Welcome to Solo Media Style Guide</P>
 		<section>
 			<H1>Heading 1</H1>
@@ -15,7 +18,7 @@ const StyleGuide = () => (
 			<H3 large>Heading 3 Large</H3>
 		</section>
 		<Button>Button Primary</Button>
-  </Layout>
+	</Layout>
 )
 
-export default StyleGuide;
+export default StyleGuide

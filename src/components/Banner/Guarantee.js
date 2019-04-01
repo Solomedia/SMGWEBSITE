@@ -32,4 +32,4 @@ const Guarantee = () => (
 	</React.Fragment>
 )
 
-export default Guarantee;
+export default Guarantee

@@ -7,31 +7,31 @@ import { P } from '../../utils/type'
 
 //STYLES BLOCK
 const logoListContainer = props => css`
-	margin: 90px 0 30px;
-	display: inline-flex;
 	align-items: center;
+	display: inline-flex;
+	margin: 90px 0 30px;
 
 	${props.breakpoint['phoneSmall']} {
-		margin: 10% 0 5%;
 		flex-direction: column;
+		margin: 10% 0 5%;
 	}
 
 	p {
 		${props.breakpoint['phoneSmall']} {
-			 margin-bottom: 10px;
+			margin-bottom: 10px;
 		}
 	}
 `
 
 const logoList = props => css`
+	align-items: center;
+	display: flex;
 	margin: 0 0 0 20px;
 	padding: 0;
-	display: flex;
-	align-items: center;
 
 	${props.breakpoint['phoneSmall']} {
+		justify-content: space-evenly;
 		margin: 0;
-    justify-content: space-evenly;
 	}
 
 	li {
@@ -51,16 +51,19 @@ const logoList = props => css`
 const LogoList = () => (
 	<div css={logoListContainer}>
 		<P>AS SEEN ON:</P>
-
 		<ul css={logoList}>
 			<li>
 				<img src={LogoUpwork} alt="" />
 			</li>
-			<li css={css`margin-left: 20px;`}>
+			<li
+				css={css`
+					margin-left: 20px;
+				`}
+			>
 				<img src={LogoClutch} alt="" />
 			</li>
 		</ul>
 	</div>
 )
 
-export default LogoList;
+export default LogoList
