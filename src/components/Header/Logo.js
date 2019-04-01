@@ -1,20 +1,20 @@
-import React from "react"
-import { Link } from "gatsby"
-import { css } from "@emotion/core"
+import React from 'react'
+import { Link } from 'gatsby'
+import { css } from '@emotion/core'
 
-import LogoImg from "../../images/logo-solo-media.png"
-import { H1 } from "../../utils/type"
+import LogoImg from '../../images/logo-solo-media.png'
+import { H1 } from '../../utils/type'
 
 //STYLES BLOCK
 const logoContainer = props => css`
 	margin: 0 5px;
 
-	${props.breakpoint["phone"]} {
+	${props.breakpoint['phone']} {
 		width: 100%;
 		margin: 0 0 15px;
 	}
 
-	${props.breakpoint["tablet"]} {
+	${props.breakpoint['tablet']} {
 		margin: 0 15px;
 	}
 `
@@ -25,12 +25,12 @@ const logoHeader = props => css`
 	align-items: center;
 	transition: width 1s linear;
 
-	${props.breakpoint["phone"]} {
+	${props.breakpoint['phone']} {
 		width: 150px;
 		margin: 0 auto;
 	}
 
-	${props.breakpoint["tablet"]} {
+	${props.breakpoint['tablet']} {
 		min-height: 145px;
 	}
 `
