@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+
 import { H1 } from '../../utils/type'
 import HandImage from '../../images/banner-logos/hand-image.png'
 import Guarantee from './Guarantee'

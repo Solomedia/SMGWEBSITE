@@ -1,7 +1,12 @@
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
+
+const typeColor = props => css`
+	color: ${props.theme.color.primary};
+`
 
 const P = styled.p`
-	color: ${props => props.theme.color.primary};
+	${typeColor};
 	font-size: 18px;
 	line-height: 22px;
 
@@ -12,14 +17,14 @@ const P = styled.p`
 `
 
 const H1 = styled.h1`
-  color: ${props => props.theme.color.primary};
+  ${typeColor};
   font-size: 54px;
 	font-weight: bold;
 	line-height: 65px;
 `
 
 const H2 = styled.h2`
-  color: ${props => props.theme.color.primary};
+  ${typeColor};
   font-size: 29px;
 	font-weight: 500;
 	line-height: 35px;
@@ -36,7 +41,7 @@ const H2 = styled.h2`
 `
 
 const H3 = styled.h3`
-  color: ${props => props.theme.color.primary};
+  ${typeColor};
   font-size: 20px;
 	line-height: 24px;
 	font-weight: 500;

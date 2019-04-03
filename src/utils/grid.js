@@ -6,7 +6,7 @@ const { gutterWidth, maxWidth, breakpoint } = theme;
 
 const Container = styled.div`
   margin: 0 auto;
-	padding: 0 ${gutterWidth}px;
+	padding: 0 ${gutterWidth / 2}px;
 	max-width: ${maxWidth['xl']};
 	width: 100%;
 
@@ -45,7 +45,7 @@ const colWidth = props => css`
 `
 
 const Col = styled.div`
-	padding: 0 ${gutterWidth}px;
+	padding: 0 ${gutterWidth / 2}px;
 	${colWidth};
 
 	${props => (
@@ -64,7 +64,11 @@ const Col = styled.div`
 		`
 	)}
 `
-// .col-xs-offset-0 need implementation
-// .col-xs-offset-1
+
+/*
+TODO: add margin with props
+	.col-xs-offset-0
+	.col-xs-offset-1
+*/
 
 export { Container, Row, Col };

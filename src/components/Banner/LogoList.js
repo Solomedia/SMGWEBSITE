@@ -1,8 +1,9 @@
 import React from 'react'
+import { css } from '@emotion/core'
+
 import LogoClutch from '../../images/banner-logos/logo-clutch.png'
 import LogoUpwork from '../../images/banner-logos/Logo-upwork.png'
 import { P } from '../../utils/type'
-import { css } from '@emotion/core'
 
 //STYLES BLOCK
 const logoListContainer = props => css`
