@@ -17,7 +17,6 @@ const subtitle = props => css`
 	text-align: center;
 
 	&.large {
-
 		${props.breakpoint['phoneSmall']} {
 			font-size: 6vw;
 			line-height: 8vw;
@@ -42,7 +41,9 @@ const WhatWeDo = () => (
 			<Row>
 				<Col>
 					<H1 css={title}>WE DO DESIGN & DEVELOPMENT.</H1>
-					<H2 large css={subtitle} className="large">AND WE DO IT WELL.</H2>
+					<H2 large css={subtitle} className="large">
+						AND WE DO IT WELL.
+					</H2>
 				</Col>
 				<Col>
 					<Services />
@@ -53,4 +54,4 @@ const WhatWeDo = () => (
 	</section>
 )
 
-export default WhatWeDo;
+export default WhatWeDo

@@ -4,11 +4,11 @@ import { css } from '@emotion/core'
 //STYLES BLOCK
 const serviceList = props => css`
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
-  flex-wrap: wrap;
-  justify-content: space-between;
 
 	${props.breakpoint['medium']} {
 		display: block;
@@ -23,11 +23,10 @@ const serviceList = props => css`
 
 		${props.breakpoint['phoneSmall']} {
 			font-size: 5vw;
-    	line-height: 6vw;
+			line-height: 6vw;
 		}
 
 		${props.breakpoint['medium']} {
-
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -44,12 +43,14 @@ const serviceListItem = props => css`
 `
 //END STYLES BLOCK
 
-const ServiceList = ({list}) => (
+const ServiceList = ({ list }) => (
 	<ul css={serviceList}>
 		{list.map(item => (
-			<li key={item.toLowerCase().trim()} css={serviceListItem}>{item}</li>
+			<li key={item.toLowerCase().trim()} css={serviceListItem}>
+				{item}
+			</li>
 		))}
 	</ul>
 )
 
-export default ServiceList;
+export default ServiceList

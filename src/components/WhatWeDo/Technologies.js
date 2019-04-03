@@ -8,13 +8,13 @@ const technologies = [
 	'PROGRESSIVE <br> WEB APPS',
 	'PROGRAMS',
 	'WEBSITES',
-	'APPLICATIONS'
-];
+	'APPLICATIONS',
+]
 
 //STYLES BLOCK
 const technologiesSection = props => css`
-	text-align: center;
 	margin-top: 5%;
+	text-align: center;
 
 	${props.breakpoint['desktop']} {
 		margin-top: 50px;
@@ -34,7 +34,7 @@ const technologiesList = props => css`
 const technologiesItem = props => css`
 	color: ${props.color.secondary};
 	font-size: 3.5vw;
-  line-height: 4.4vw;
+	line-height: 4.4vw;
 	margin-bottom: 3%;
 	padding: 0 10px;
 	text-align: center;
@@ -81,17 +81,25 @@ const paragraph = props => css`
 const Technologies = () => (
 	<section css={technologiesSection}>
 		<ul css={technologiesList}>
-			{
-				technologies.map(item =>
-					<li css={technologiesItem} key={item.toLowerCase().trim()} dangerouslySetInnerHTML={{__html: item}} />
-				)
-			}
+			{technologies.map(item => (
+				<li
+					css={technologiesItem}
+					key={item.toLowerCase().trim()}
+					dangerouslySetInnerHTML={{ __html: item }}
+				/>
+			))}
 		</ul>
-		<footer css={css`margin-top: 50px;`}>
-			<P large css={paragraph}>READY TO GET STARTED?</P>
+		<footer
+			css={css`
+				margin-top: 50px;
+			`}
+		>
+			<P large css={paragraph}>
+				READY TO GET STARTED?
+			</P>
 			<Button>LET’S TALK.</Button>
 		</footer>
 	</section>
 )
 
-export default Technologies;
+export default Technologies

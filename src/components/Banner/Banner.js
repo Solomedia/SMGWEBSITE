@@ -8,10 +8,10 @@ import LogoList from './LogoList'
 
 //STYLES BLOCK
 const bannerContent = props => css`
-	text-align: center;
-	max-width: 940px;
 	margin: 120px auto 0;
+	max-width: 940px;
 	position: relative;
+	text-align: center;
 
 	${props.breakpoint['phone']} {
 		margin-top: 10%;
@@ -22,23 +22,23 @@ const bannerTitle = props => css`
 	margin-bottom: 80px;
 
 	${props.breakpoint['phone']} {
-	  font-size: 5.3vw;
-    line-height: 6.5vw;
-    margin-bottom: 10%;
+		font-size: 5.3vw;
+		line-height: 6.5vw;
+		margin-bottom: 10%;
 	}
 `
 
 const handImageBox = props => css`
-		opacity: 0;
-	  position: absolute;
-    width: 265px;
-    right: 0;
-    transform: translateX(100%);
-		transition: opacity .8s;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	transform: translateX(100%);
+	transition: opacity 0.8s;
+	width: 265px;
 
-		${props.breakpoint['large']} {
-			opacity: 1;
-		}
+	${props.breakpoint['large']} {
+		opacity: 1;
+	}
 `
 //END STYLES
 
@@ -46,12 +46,11 @@ const Banner = () => (
 	<section css={bannerContent}>
 		<img src={HandImage} alt="" css={handImageBox} />
 		<H1 css={bannerTitle}>
-			ALL PROJECTS DELIVERED
-			ON TIME, ON BUDGET, & ON SCOPE.
+			ALL PROJECTS DELIVERED ON TIME, ON BUDGET, & ON SCOPE.
 		</H1>
 		<Guarantee />
 		<LogoList />
 	</section>
 )
 
-export default Banner;
+export default Banner

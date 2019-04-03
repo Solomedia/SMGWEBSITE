@@ -8,15 +8,14 @@ import theme from '../constants/theme-styles'
 import { ThemeProvider } from 'emotion-theming'
 
 const Layout = ({ children }) => {
-
-  return (
-    <ThemeProvider theme={theme}>
-			<Global styles={globalStyles}  />
+	return (
+		<ThemeProvider theme={theme}>
+			<Global styles={globalStyles} />
 			<Header siteTitle="solo" />
 			<main>{children}</main>
 			<Footer />
-    </ThemeProvider>
-  )
+		</ThemeProvider>
+	)
 }
 
 Layout.propTypes = {

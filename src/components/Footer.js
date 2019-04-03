@@ -5,23 +5,33 @@ import { css } from '@emotion/core'
 
 //STYLES BLOCK
 const footerContent = css`
+	margin-top: 200px;
 	text-align: center;
 `
 //END STYLES
 
 const Footer = () => (
-  <footer>
+	<footer>
 		<Container>
 			<Row>
 				<Col>
 					<section css={footerContent}>
-						<P css={css`font-weight: bold;`}>STAY WOKE.</P>
-						<P>SUBSCRIBE TO SEE WHAT’S GOING ON WITHIN SOLO MEDIA AND THE DESIGN & DEVELOPMENT WORLD.</P>
+						<P
+							css={css`
+								font-weight: bold;
+							`}
+						>
+							STAY WOKE.
+						</P>
+						<P>
+							SUBSCRIBE TO SEE WHAT’S GOING ON WITHIN SOLO MEDIA AND THE DESIGN
+							& DEVELOPMENT WORLD.
+						</P>
 					</section>
 				</Col>
 			</Row>
 		</Container>
-  </footer>
+	</footer>
 )
 
 export default Footer

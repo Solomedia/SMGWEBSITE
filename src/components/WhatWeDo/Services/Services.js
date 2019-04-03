@@ -10,21 +10,13 @@ TODO: remove with graphQl integration
 const data = [
 	{
 		title: 'DESIGN',
-		list : [
-			'USER INTERFACE',
-			'USER EXPERIENCE',
-			'RESPONSIVE DESIGN'
-		]
+		list: ['USER INTERFACE', 'USER EXPERIENCE', 'RESPONSIVE DESIGN'],
 	},
 	{
 		title: 'DEVELOPMENT',
-		list : [
-			'USER INTERFACE',
-			'USER EXPERIENCE',
-			'RESPONSIVE DESIGN'
-		]
-	}
-];
+		list: ['USER INTERFACE', 'USER EXPERIENCE', 'RESPONSIVE DESIGN'],
+	},
+]
 
 //STYLES BLOCK
 const serviceContent = props => css`
@@ -47,14 +39,14 @@ const serviceBlock = props => css`
 	alig-items: center;
 	display: flex;
 	flex-direction: column;
-  margin-bottom: 10%;
+	margin-bottom: 10%;
 
 	${props.breakpoint['medium']} {
 		align-items: center;
 		flex-direction: row;
+		justify-content: space-between;
 		margin-bottom: 0;
 		margin-bottom: 50px;
-  	justify-content: space-between;
 	}
 `
 //END STYLES BLOCK
@@ -62,16 +54,14 @@ const serviceBlock = props => css`
 const Services = () => (
 	<React.Fragment>
 		<section css={serviceContent}>
-			{
-				data.map( (service, index) => (
-					<article css={serviceBlock} key={service.title.toLowerCase()}>
-						<ServiceHeader title={service.title} number={`0${index+1}`} />
-						<ServiceList list={service.list} />
-					</article>
-				))
-			}
+			{data.map((service, index) => (
+				<article css={serviceBlock} key={service.title.toLowerCase()}>
+					<ServiceHeader title={service.title} number={`0${index + 1}`} />
+					<ServiceList list={service.list} />
+				</article>
+			))}
 		</section>
 	</React.Fragment>
 )
 
-export default Services;
+export default Services

@@ -1,13 +1,13 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 import theme from '../constants/theme-styles'
 import { css } from '@emotion/core'
 
-const { gutterWidth, maxWidth, breakpoint } = theme;
+const { gutterWidth, maxWidth, breakpoint } = theme
 
 const Container = styled.div`
-  margin: 0 auto;
-	padding: 0 ${gutterWidth / 2}px;
+	margin: 0 auto;
 	max-width: ${maxWidth['xl']};
+	padding: 0 ${gutterWidth / 2}px;
 	width: 100%;
 
 	&.container-fluid {
@@ -17,11 +17,11 @@ const Container = styled.div`
 
 const Row = styled.div`
 	label: row;
-	display: flex;
-	margin: 0 -${gutterWidth / 2}px;
 	box-sizing: border-box;
+	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	margin: 0 -${gutterWidth / 2}px;
 
 	&.reverse {
 		flex-direction: column-reverse;
@@ -37,32 +37,32 @@ const Row = styled.div`
 `
 
 const getWidth = val => {
-	return `${(val || 12) / .12}%`;
+	return `${(val || 12) / 0.12}%`
 }
 
 const colWidth = props => css`
-  width: ${getWidth(props.col)};
+	width: ${getWidth(props.col)};
 `
 
 const Col = styled.div`
 	padding: 0 ${gutterWidth / 2}px;
 	${colWidth};
 
-	${props => (
-		props['colMd'] && css`
+	${props =>
+		props['colMd'] &&
+		css`
 			${breakpoint['tabletOnly']} {
 				width: ${getWidth(props['colMd'])};
 			}
-		`
-	)}
+		`}
 
-	${props => (
-		props['colLg'] && css`
+	${props =>
+		props['colLg'] &&
+		css`
 			${breakpoint['desktop']} {
 				width: ${getWidth(props['colLg'])};
 			}
-		`
-	)}
+		`}
 `
 
 /*
@@ -71,4 +71,4 @@ TODO: add margin with props
 	.col-xs-offset-1
 */
 
-export { Container, Row, Col };
+export { Container, Row, Col }

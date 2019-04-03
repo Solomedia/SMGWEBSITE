@@ -1,23 +1,22 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { css } from "@emotion/core"
+import React from 'react'
+import { css } from '@emotion/core'
 
-import { H3 } from "../../utils/type"
-import { Container, Row, Col } from "../../utils/grid"
-import Logo from "./Logo"
+import { H3 } from '../../utils/type'
+import { Container, Row, Col } from '../../utils/grid'
+import Logo from './Logo'
 
 //STYLES BLOCK
 const HeaderContent = props => css`
 	align-items: center;
 	display: flex;
-	justify-content: space-evenly;
 	flex-wrap: wrap;
-	max-width: 940px;
+	justify-content: space-evenly;
 	margin: 0 auto;
+	max-width: 940px;
 
-	${props.breakpoint["tablet"]} {
-		justify-content: center;
+	${props.breakpoint['tablet']} {
 		flex-wrap: nowrap;
+		justify-content: center;
 	}
 `
 
@@ -26,7 +25,7 @@ const headerCol = css`
 `
 
 const rightCol = props => css`
-	${props.breakpoint["phone"]} {
+	${props.breakpoint['phone']} {
 		${headerCol};
 		order: 2;
 		padding-left: 10px;
@@ -36,26 +35,26 @@ const rightCol = props => css`
 const lefCol = props => css`
 	text-align: right;
 
-	${props.breakpoint["phone"]} {
+	${props.breakpoint['phone']} {
 		${headerCol};
 		order: 1;
 	}
 `
 
 const subTitle = props => css`
-	${props.breakpoint["phoneSmall"]} {
+	${props.breakpoint['phoneSmall']} {
 		text-align: center;
 	}
 `
 
 const customTitles = props => css`
-	${subTitle};
-	margin-top: 10px;
+	font-size: 18px;
 	font-style: italic;
 	font-weight: 300;
-	font-size: 18px;
+	margin-top: 10px;
+	text-align: center;
 
-	${props.breakpoint["phone"]} {
+	${props.breakpoint['phone']} {
 		font-size: 17px;
 		margin-top: 5px;
 	}
@@ -83,13 +82,5 @@ const Header = () => (
 		</Container>
 	</header>
 )
-
-Header.propTypes = {
-	siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-	siteTitle: `Solo`,
-}
 
 export default Header

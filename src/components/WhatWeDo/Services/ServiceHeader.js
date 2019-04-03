@@ -1,31 +1,32 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import PropTypes from 'prop-types'
 
 import { H2 } from '../../../utils/type'
 
 //STYLES BLOCK
 const titleStyles = props => css`
+	align-items: center;
 	color: ${props.color.secondary};
 	display: flex;
 	font-size: 49px;
 	line-height: 51px;
-  align-items: center;
 
 	${props.breakpoint['phoneSmall']} {
 		font-size: 8vw;
-    line-height: 9vh;
+		line-height: 9vh;
 	}
 
 	span {
 		color: ${props.color.cerulean};
 		font-size: 123px;
 		line-height: 148px;
-		opacity: .3;
-    min-width: 120px;
+		min-width: 120px;
+		opacity: 0.3;
 
 		${props.breakpoint['phoneSmall']} {
 			font-size: 21.3vw;
-    	line-height: 25.8vw;
+			line-height: 25.8vw;
 			margin-right: 10px;
 			min-width: 75px;
 		}
@@ -37,14 +38,18 @@ const titleStyles = props => css`
 `
 //END STYLES BLOCK
 
-const ServiceHeader = ({title, number}) => {
+const ServiceHeader = ({ title, number }) => {
 	return (
-	<H2 css={titleStyles}>
-		<span>{number}</span>
-		{title}
-	</H2>
-
+		<H2 css={titleStyles}>
+			<span>{number}</span>
+			{title}
+		</H2>
 	)
 }
 
-export default ServiceHeader;
+ServiceHeader.propTypes = {
+	title: PropTypes.string.isRequired,
+	number: PropTypes.string.isRequired,
+}
+
+export default ServiceHeader
