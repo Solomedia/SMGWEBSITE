@@ -3,5 +3,10 @@
 	"rules": {
 		"strict": 0
 	},
-	"extends": ["eslint:recommended", "plugin:react/recommended"]
+	"extends": [
+		"react-app",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	]
 }
