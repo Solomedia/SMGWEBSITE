@@ -3,6 +3,9 @@ import normalize from './normalizer-styles'
 
 const globalStyles = props => css`
 	${normalize}
+	body {
+		color: ${props.color.primary};
+	}
 	button,
 	input,
 	optgroup,
@@ -25,8 +28,16 @@ const globalStyles = props => css`
 		margin: 0;
 		padding: 0;
 	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		margin: 0;
+		text-transform: uppercase;
+	}
 	p {
 		margin: 0;
+		color: ${props.color.primary};
 	}
 	a {
 		text-decoration: none;

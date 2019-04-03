@@ -4,13 +4,13 @@ import { css } from '@emotion/core'
 const typeColor = props => css`
 	color: ${props.theme.color.primary};
 `
+
 const pSize = props => css`
 	font-size: ${props.large ? '21px' : '18px'};
 	line-height: ${props.large ? '25px' : '22px'};
 `
 
 const P = styled.p`
-	${typeColor};
 	${pSize}
 `
 

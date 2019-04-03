@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 
 //STYLES BLOCK
 const footerContent = css`
+	margin-top: 200px;
 	text-align: center;
 `
 //END STYLES

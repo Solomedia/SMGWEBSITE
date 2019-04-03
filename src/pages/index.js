@@ -4,6 +4,7 @@ import SEO from '../components/seo'
 import { Container, Row, Col } from '../utils/grid'
 import Banner from '../components/Banner/Banner'
 import WhatWeDo from '../components/WhatWeDo/WhatWeDo'
+import MeetTheTeam from '../components/MeetTheTeam/MeetTheTeam'
 
 const IndexPage = () => (
 	<Layout>
@@ -16,6 +17,7 @@ const IndexPage = () => (
 			</Row>
 		</Container>
 		<WhatWeDo />
+		<MeetTheTeam />
 	</Layout>
 )
 

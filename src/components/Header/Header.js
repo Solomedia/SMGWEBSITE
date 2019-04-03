@@ -48,11 +48,11 @@ const subTitle = props => css`
 `
 
 const customTitles = props => css`
-	${subTitle};
 	font-size: 18px;
 	font-style: italic;
 	font-weight: 300;
 	margin-top: 10px;
+	text-align: center;
 
 	${props.breakpoint['phone']} {
 		font-size: 17px;

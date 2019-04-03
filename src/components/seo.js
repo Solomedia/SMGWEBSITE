@@ -82,6 +82,12 @@ function SEO({ description, lang, meta, keywords, title }) {
 				href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,500,500i,600,700"
 				rel="stylesheet"
 			/>
+			<link
+				rel="stylesheet"
+				type="text/css"
+				charset="UTF-8"
+				href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+			/>
 		</Helmet>
 	)
 }
