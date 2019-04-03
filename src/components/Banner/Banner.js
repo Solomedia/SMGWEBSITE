@@ -29,14 +29,15 @@ const bannerTitle = props => css`
 `
 
 const handImageBox = props => css`
-		display: none;
+		opacity: 0;
 	  position: absolute;
     width: 265px;
     right: 0;
     transform: translateX(100%);
+		transition: opacity .8s;
 
 		${props.breakpoint['large']} {
-			display: block;
+			opacity: 1;
 		}
 `
 //END STYLES

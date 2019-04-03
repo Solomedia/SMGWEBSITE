@@ -6,6 +6,7 @@ import { Container, Row, Col } from '../../utils/grid'
 import Technologies from './Technologies'
 import Services from './Services/Services'
 
+//STYLES BLOCK
 const section = props => css`
 	background-color: ${props.color.primary};
 	padding: 75px 0 53px;
@@ -15,7 +16,7 @@ const subtitle = props => css`
 	color: ${props.color.secondary};
 	text-align: center;
 
-	&.big {
+	&.large {
 
 		${props.breakpoint['phoneSmall']} {
 			font-size: 6vw;
@@ -33,6 +34,7 @@ const title = props => css`
 		line-height: 11vw;
 	}
 `
+//END STYLES BLOCK
 
 const WhatWeDo = () => (
 	<section css={section}>
@@ -40,7 +42,7 @@ const WhatWeDo = () => (
 			<Row>
 				<Col>
 					<H1 css={title}>WE DO DESIGN & DEVELOPMENT.</H1>
-					<H2 css={subtitle} className="big">AND WE DO IT WELL.</H2>
+					<H2 large css={subtitle} className="large">AND WE DO IT WELL.</H2>
 				</Col>
 				<Col>
 					<Services />

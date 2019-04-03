@@ -27,28 +27,29 @@ const data = [
 ];
 
 //STYLES BLOCK
-const customBreakpoint = `@media (min-width: 992px)`;
-
 const serviceContent = props => css`
 	margin: 50px auto 0;
+	overflow: hidden;
+	width: 90%;
 
 	${props.breakpoint['phoneSmall']} {
 		margin-top: 10%;
 	}
 
-	${customBreakpoint} {
+	${props.breakpoint['medium']} {
 		margin-top: 80px;
 		max-width: 850px;
+		width: 100%;
 	}
 `
 
-const serviceBlock = css`
+const serviceBlock = props => css`
 	alig-items: center;
 	display: flex;
 	flex-direction: column;
   margin-bottom: 10%;
 
-	${customBreakpoint} {
+	${props.breakpoint['medium']} {
 		align-items: center;
 		flex-direction: row;
 		margin-bottom: 0;

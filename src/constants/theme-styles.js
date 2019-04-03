@@ -7,6 +7,7 @@ const breakpoint = {
 	phone: `@media (max-width: 768px)`,
 	tablet: `@media (min-width: 768px)`,
 	tabletOnly: `@media (min-width: 768px) and (max-width: 1023px)`,
+	medium: `@media (min-width: 992px)`,
 	desktop: `@media (min-width: 1024px)`,
 	large: `@media (min-width: 1440px)`
 };
@@ -25,7 +26,8 @@ const maxWidth = {
 	secondary: '#FFFFFF',
 	tundora: '#4B4242',
 	tundoraGray: '#4C4C4C',
-	lilacBush: '#A07FDA'
+	lilacBush: '#A07FDA',
+	alto: '#D8D8D8'
 };
 
 const theme = {

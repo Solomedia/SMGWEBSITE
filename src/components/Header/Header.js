@@ -1,16 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { css } from '@emotion/core'
+import React from "react"
+import PropTypes from "prop-types"
+import { css } from "@emotion/core"
 
-import { H3 } from '../../utils/type'
-import { Container, Row, Col } from '../../utils/grid'
-import theme from '../../constants/theme-styles'
-import Logo from './Logo'
-
-const { breakpoint } = theme;
+import { H3 } from "../../utils/type"
+import { Container, Row, Col } from "../../utils/grid"
+import Logo from "./Logo"
 
 //STYLES BLOCK
-const HeaderContent = css`
+const HeaderContent = props => css`
 	align-items: center;
 	display: flex;
 	justify-content: space-evenly;
@@ -18,67 +15,60 @@ const HeaderContent = css`
 	max-width: 940px;
 	margin: 0 auto;
 
-	${breakpoint['tablet']} {
+	${props.breakpoint["tablet"]} {
 		justify-content: center;
 		flex-wrap: nowrap;
 	}
 `
 
 const headerCol = css`
-	${breakpoint['phone']} {
-		margin-top: 15px;
-		min-width: 230px;
-	}
+	margin-bottom: 10px;
 `
 
-const rightCol = css`
-	${headerCol}
-
-	${breakpoint['phone']} {
+const rightCol = props => css`
+	${props.breakpoint["phone"]} {
+		${headerCol};
 		order: 2;
+		padding-left: 10px;
 	}
 `
 
-const lefCol = css`
-	${headerCol}
+const lefCol = props => css`
 	text-align: right;
 
-	${breakpoint['phone']} {
+	${props.breakpoint["phone"]} {
+		${headerCol};
 		order: 1;
 	}
 `
 
-const subTitle = css`
-
-	${breakpoint['phoneSmall']} {
+const subTitle = props => css`
+	${props.breakpoint["phoneSmall"]} {
 		text-align: center;
-	}
-
-	${breakpoint['phone']} {
-		font-size: 14px;
-		line-height: 14px;
 	}
 `
 
-const customTitles = css`
-	margin-top: 15px;
+const customTitles = props => css`
+	${subTitle};
+	margin-top: 10px;
 	font-style: italic;
 	font-weight: 300;
-	${subTitle};
+	font-size: 18px;
 
-	${breakpoint['phone']} {
-	  margin-top: 7px
+	${props.breakpoint["phone"]} {
+		font-size: 17px;
+		margin-top: 5px;
 	}
 `
 //END STYLES
 
 const Header = () => (
-  <header>
+	<header>
 		<Container>
 			<Row>
 				<Col>
 					<section css={HeaderContent}>
-						<div css={lefCol} align="left">
+						<div css={lefCol}>
 							<H3 css={subTitle}>SOLO MEDIA GROUP</H3>
 							<H3 css={customTitles}>DESIGN & DEVELOPMENT AGENCY</H3>
 						</div>
@@ -91,15 +81,15 @@ const Header = () => (
 				</Col>
 			</Row>
 		</Container>
-  </header>
+	</header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+	siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: `Solo`,
+	siteTitle: `Solo`,
 }
 
 export default Header

@@ -7,9 +7,15 @@ import { H1 } from '../../utils/type'
 
 //STYLES BLOCK
 const logoContainer = props => css`
+	margin: 0 5px;
 
 	${props.breakpoint['phone']} {
 		width: 100%;
+		margin: 0 0 15px;
+	}
+
+	${props.breakpoint['tablet']} {
+		margin: 0 15px;
 	}
 `
 
@@ -19,17 +25,12 @@ const logoHeader = props => css`
 	align-items: center;
 	transition: width 1s linear;
 
-	${props.breakpoint['phone']}{
+	${props.breakpoint['phone']} {
 		width: 150px;
-    margin: 0 auto;
-	}
-
-	${props.breakpoint['phoneSmall']}{
-		width: 120px;
+		margin: 0 auto;
 	}
 
 	${props.breakpoint['tablet']} {
-		margin: 0 20px;
 		min-height: 145px;
 	}
 `
@@ -39,10 +40,16 @@ const Logo = () => (
 	<div css={logoContainer}>
 		<H1 css={logoHeader}>
 			<Link to="/">
-				<img src={LogoImg} css={css`width: 100%;`} alt="" />
+				<img
+					src={LogoImg}
+					css={css`
+						width: 100%;
+					`}
+					alt=""
+				/>
 			</Link>
 		</H1>
 	</div>
 )
 
-export default Logo;
+export default Logo

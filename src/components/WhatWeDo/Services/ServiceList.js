@@ -1,8 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-const customBreakpoint = `@media (min-width: 992px)`;
-
+//STYLES BLOCK
 const serviceList = props => css`
 	display: flex;
 	margin: 0;
@@ -11,7 +10,7 @@ const serviceList = props => css`
   flex-wrap: wrap;
   justify-content: space-between;
 
-	${customBreakpoint} {
+	${props.breakpoint['medium']} {
 		display: block;
 	}
 
@@ -27,7 +26,7 @@ const serviceList = props => css`
     	line-height: 6vw;
 		}
 
-		${customBreakpoint} {
+		${props.breakpoint['medium']} {
 
 			&:last-child {
 				margin-bottom: 0;
@@ -43,6 +42,7 @@ const serviceListItem = props => css`
 	line-height: 34px;
 	padding: 0 5px;
 `
+//END STYLES BLOCK
 
 const ServiceList = ({list}) => (
 	<ul css={serviceList}>
