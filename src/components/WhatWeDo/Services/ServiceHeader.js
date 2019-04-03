@@ -38,10 +38,10 @@ const titleStyles = props => css`
 `
 //END STYLES BLOCK
 
-const ServiceHeader = ({ title }) => {
+const ServiceHeader = ({ title, number }) => {
 	return (
 		<H2 css={titleStyles}>
-			{/* <span>{number}</span> */}
+			<span>{number}</span>
 			{title}
 		</H2>
 	)
