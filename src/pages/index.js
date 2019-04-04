@@ -1,6 +1,7 @@
 import React from 'react'
-import Layout from '../layouts/main'
 import SEO from '../components/seo'
+
+import Layout from '../layouts/layout'
 import { Container, Row, Col } from '../utils/grid'
 import Banner from '../components/Banner/Banner'
 import WhatWeDo from '../components/WhatWeDo/WhatWeDo'

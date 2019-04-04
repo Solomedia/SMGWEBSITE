@@ -6,6 +6,26 @@ import { css } from '@emotion/core'
 import { P } from '../../../utils/type'
 import SliderSettings from './SliderSettings'
 
+const SliderTeam = ({ employeeList }) => (
+	<Slider {...SliderSettings}>
+		{employeeList.map(employee => (
+			<article css={sliderItem} key={employee.slug}>
+				<div css={employeeThumbnail}>
+					<img src={employee.thumbnail} alt={employee.name} />
+				</div>
+				<div css={infoBox}>
+					<h2>{employee.name}</h2>
+					<h3>{employee.position}</h3>
+					<i className="icon-arrow-right" />
+					<P large>
+						<strong>BIO:</strong> {employee.bio}
+					</P>
+				</div>
+			</article>
+		))}
+	</Slider>
+)
+
 //STYLES BLOCK
 const sliderItem = props => css`
 	align-items: center;
@@ -77,26 +97,6 @@ const infoBox = props => css`
 	}
 `
 //END STYLES BLOCK
-
-const SliderTeam = ({ employeeList }) => (
-	<Slider {...SliderSettings}>
-		{employeeList.map(employee => (
-			<article css={sliderItem} key={employee.slug}>
-				<div css={employeeThumbnail}>
-					<img src={employee.thumbnail} alt={employee.name} />
-				</div>
-				<div css={infoBox}>
-					<h2>{employee.name}</h2>
-					<h3>{employee.position}</h3>
-					<i className="icon-arrow-right" />
-					<P large>
-						<strong>BIO:</strong> {employee.bio}
-					</P>
-				</div>
-			</article>
-		))}
-	</Slider>
-)
 
 SliderTeam.propTypes = {
 	employeeList: PropTypes.arrayOf(

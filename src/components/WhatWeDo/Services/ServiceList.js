@@ -1,5 +1,16 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import PropTypes from 'prop-types'
+
+const ServiceList = ({ list }) => (
+	<ul css={serviceList}>
+		{list.map(item => (
+			<li key={item.toLowerCase().trim()} css={serviceListItem}>
+				{item}
+			</li>
+		))}
+	</ul>
+)
 
 //STYLES BLOCK
 const serviceList = props => css`
@@ -43,14 +54,8 @@ const serviceListItem = props => css`
 `
 //END STYLES BLOCK
 
-const ServiceList = ({ list }) => (
-	<ul css={serviceList}>
-		{list.map(item => (
-			<li key={item.toLowerCase().trim()} css={serviceListItem}>
-				{item}
-			</li>
-		))}
-	</ul>
-)
+ServiceList.propTypes = {
+	list: PropTypes.array,
+}
 
 export default ServiceList

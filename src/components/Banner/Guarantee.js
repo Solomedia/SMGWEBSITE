@@ -5,6 +5,19 @@ import { Link } from 'gatsby'
 import { H2 } from '../../utils/type'
 import Button from '../../utils/buttons'
 
+const Guarantee = () => (
+	<React.Fragment>
+		<div css={quarantee}>
+			<H2>WE GUARANTEE IT.</H2>
+			<Link to="#">OUR GUARANTEE</Link>
+		</div>
+
+		<div>
+			<Button>Let&#39;s Talk</Button>
+		</div>
+	</React.Fragment>
+)
+
 //STYLES BLOCK
 const quarantee = props => css`
 	margin-bottom: 50px;
@@ -18,18 +31,5 @@ const quarantee = props => css`
 	}
 `
 //END STYLES BLOCK
-
-const Guarantee = () => (
-	<React.Fragment>
-		<div css={quarantee}>
-			<H2>WE GUARANTEE IT.</H2>
-			<Link to="#">OUR GUARANTEE</Link>
-		</div>
-
-		<div>
-			<Button>Let's Talk</Button>
-		</div>
-	</React.Fragment>
-)
 
 export default Guarantee

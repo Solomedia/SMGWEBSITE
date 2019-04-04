@@ -5,6 +5,28 @@ import { H3 } from '../../utils/type'
 import { Container, Row, Col } from '../../utils/grid'
 import Logo from './Logo'
 
+const Header = () => (
+	<header>
+		<Container>
+			<Row>
+				<Col>
+					<section css={HeaderContent}>
+						<div css={lefCol}>
+							<H3 css={subTitle}>SOLO MEDIA GROUP</H3>
+							<H3 css={customTitles}>DESIGN & DEVELOPMENT AGENCY</H3>
+						</div>
+						<Logo />
+						<div css={rightCol}>
+							<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
+							<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
+						</div>
+					</section>
+				</Col>
+			</Row>
+		</Container>
+	</header>
+)
+
 //STYLES BLOCK
 const HeaderContent = props => css`
 	align-items: center;
@@ -60,27 +82,5 @@ const customTitles = props => css`
 	}
 `
 //END STYLES
-
-const Header = () => (
-	<header>
-		<Container>
-			<Row>
-				<Col>
-					<section css={HeaderContent}>
-						<div css={lefCol}>
-							<H3 css={subTitle}>SOLO MEDIA GROUP</H3>
-							<H3 css={customTitles}>DESIGN & DEVELOPMENT AGENCY</H3>
-						</div>
-						<Logo />
-						<div css={rightCol}>
-							<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
-							<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
-						</div>
-					</section>
-				</Col>
-			</Row>
-		</Container>
-	</header>
-)
 
 export default Header

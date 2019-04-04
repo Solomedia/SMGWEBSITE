@@ -19,7 +19,7 @@ const maxWidth = {
 	xl: '1440px',
 }
 
-const color = {
+export const themeLight = {
 	cerulean: '#0AB2D8',
 	doveGray: '#656565',
 	primary: '#000000',
@@ -30,10 +30,21 @@ const color = {
 	alto: '#D8D8D8',
 }
 
+export const themeDark = {
+	cerulean: themeLight.cerulean,
+	doveGray: themeLight.doveGray,
+	primary: themeLight.secondary,
+	secondary: themeLight.primary,
+	tundora: themeLight.tundora,
+	tundoraGray: themeLight.tundoraGray,
+	lilacBush: themeLight.lilacBush,
+	alto: themeLight.alto,
+}
+
 const theme = {
 	breakpoint,
 	columns,
-	color,
+	color: themeLight,
 	gutterWidth,
 	maxWidth,
 }

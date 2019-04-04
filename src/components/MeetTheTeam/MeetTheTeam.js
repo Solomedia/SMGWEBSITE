@@ -27,6 +27,22 @@ const data = [
 	},
 ]
 
+const MeetTheTeam = () => (
+	<section css={mainSection}>
+		<Container>
+			<Row>
+				<Col>
+					<header css={sectionHeader}>
+						<H1 css={sectionTitle}>Meet the team</H1>
+						<p css={headerSlogan}>OVER 10 YEARS OF EXPERIENCE.</p>
+					</header>
+					<SliderTeam employeeList={data} />
+				</Col>
+			</Row>
+		</Container>
+	</section>
+)
+
 //STYLES BLOCK
 
 const mainSection = props => css`
@@ -65,21 +81,5 @@ const headerSlogan = props => css`
 	}
 `
 //END STYLES BLOCK
-
-const MeetTheTeam = () => (
-	<section css={mainSection}>
-		<Container>
-			<Row>
-				<Col>
-					<header css={sectionHeader}>
-						<H1 css={sectionTitle}>Meet the team</H1>
-						<p css={headerSlogan}>OVER 10 YEARS OF EXPERIENCE.</p>
-					</header>
-					<SliderTeam employeeList={data} />
-				</Col>
-			</Row>
-		</Container>
-	</section>
-)
 
 export default MeetTheTeam
