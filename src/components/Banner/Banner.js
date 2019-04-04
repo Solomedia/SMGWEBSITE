@@ -6,6 +6,17 @@ import HandImage from '../../images/banner-logos/hand-image.png'
 import Guarantee from './Guarantee'
 import LogoList from './LogoList'
 
+const Banner = () => (
+	<section css={bannerContent}>
+		<img src={HandImage} alt="" css={handImageBox} />
+		<H1 css={bannerTitle}>
+			ALL PROJECTS DELIVERED ON TIME, ON BUDGET, & ON SCOPE.
+		</H1>
+		<Guarantee />
+		<LogoList />
+	</section>
+)
+
 //STYLES BLOCK
 const bannerContent = props => css`
 	margin: 120px auto 0;
@@ -41,16 +52,5 @@ const handImageBox = props => css`
 	}
 `
 //END STYLES
-
-const Banner = () => (
-	<section css={bannerContent}>
-		<img src={HandImage} alt="" css={handImageBox} />
-		<H1 css={bannerTitle}>
-			ALL PROJECTS DELIVERED ON TIME, ON BUDGET, & ON SCOPE.
-		</H1>
-		<Guarantee />
-		<LogoList />
-	</section>
-)
 
 export default Banner

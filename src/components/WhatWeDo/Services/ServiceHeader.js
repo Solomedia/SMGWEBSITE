@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { css } from '@emotion/core'
 import PropTypes from 'prop-types'
+import styled from '@emotion/styled'
 
 import { H2 } from '../../../utils/type'
+import ThemeContext from '../../../context/ThemeContext'
+
+const ServiceHeader = ({ title, number }) => {
+	const theme = useContext(ThemeContext)
+
+	return (
+		<H2 css={titleStyles}>
+			<ServiceNumber theme={theme.themeName}>{number}</ServiceNumber>
+			{title}
+		</H2>
+	)
+}
+
+//STYLED COMPONENTS
+
+const ServiceNumber = styled.span(({ theme }) => ({
+	opacity: theme === 'Light' ? '0.3' : '1',
+}))
+
+//END STYLED COMPONENTS
 
 //STYLES BLOCK
 const titleStyles = props => css`
@@ -22,7 +43,6 @@ const titleStyles = props => css`
 		font-size: 123px;
 		line-height: 148px;
 		min-width: 120px;
-		opacity: 0.3;
 
 		${props.breakpoint['phoneSmall']} {
 			font-size: 21.3vw;
@@ -37,15 +57,6 @@ const titleStyles = props => css`
 	}
 `
 //END STYLES BLOCK
-
-const ServiceHeader = ({ title, number }) => {
-	return (
-		<H2 css={titleStyles}>
-			<span>{number}</span>
-			{title}
-		</H2>
-	)
-}
 
 ServiceHeader.propTypes = {
 	title: PropTypes.string.isRequired,

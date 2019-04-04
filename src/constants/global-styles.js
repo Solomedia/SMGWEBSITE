@@ -3,8 +3,16 @@ import normalize from './normalizer-styles'
 
 const globalStyles = props => css`
 	${normalize}
+	html,
+	body {
+		/*
+		TODO: Check and fix what is generating extra space, probably grid containers
+		*/
+		overflow-x: hidden;
+	}
 	body {
 		color: ${props.color.primary};
+		background-color: ${props.color.secondary};
 	}
 	button,
 	input,

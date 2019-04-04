@@ -18,6 +18,19 @@ const data = [
 	},
 ]
 
+const Services = () => (
+	<React.Fragment>
+		<section css={serviceContent}>
+			{data.map((service, index) => (
+				<article css={serviceBlock} key={service.title.toLowerCase()}>
+					<ServiceHeader title={service.title} number={`0${index + 1}`} />
+					<ServiceList list={service.list} />
+				</article>
+			))}
+		</section>
+	</React.Fragment>
+)
+
 //STYLES BLOCK
 const serviceContent = props => css`
 	margin: 50px auto 0;
@@ -50,18 +63,5 @@ const serviceBlock = props => css`
 	}
 `
 //END STYLES BLOCK
-
-const Services = () => (
-	<React.Fragment>
-		<section css={serviceContent}>
-			{data.map((service, index) => (
-				<article css={serviceBlock} key={service.title.toLowerCase()}>
-					<ServiceHeader title={service.title} number={`0${index + 1}`} />
-					<ServiceList list={service.list} />
-				</article>
-			))}
-		</section>
-	</React.Fragment>
-)
 
 export default Services

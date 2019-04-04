@@ -11,6 +11,30 @@ const technologies = [
 	'APPLICATIONS',
 ]
 
+const Technologies = () => (
+	<section css={technologiesSection}>
+		<ul css={technologiesList}>
+			{technologies.map(item => (
+				<li
+					css={technologiesItem}
+					key={item.toLowerCase().trim()}
+					dangerouslySetInnerHTML={{ __html: item }}
+				/>
+			))}
+		</ul>
+		<footer
+			css={css`
+				margin-top: 50px;
+			`}
+		>
+			<P large css={paragraph}>
+				READY TO GET STARTED?
+			</P>
+			<Button>LET’S TALK.</Button>
+		</footer>
+	</section>
+)
+
 //STYLES BLOCK
 const technologiesSection = props => css`
 	margin-top: 5%;
@@ -77,29 +101,5 @@ const paragraph = props => css`
 	margin-bottom: 20px;
 `
 //END STYLES BLOCK
-
-const Technologies = () => (
-	<section css={technologiesSection}>
-		<ul css={technologiesList}>
-			{technologies.map(item => (
-				<li
-					css={technologiesItem}
-					key={item.toLowerCase().trim()}
-					dangerouslySetInnerHTML={{ __html: item }}
-				/>
-			))}
-		</ul>
-		<footer
-			css={css`
-				margin-top: 50px;
-			`}
-		>
-			<P large css={paragraph}>
-				READY TO GET STARTED?
-			</P>
-			<Button>LET’S TALK.</Button>
-		</footer>
-	</section>
-)
 
 export default Technologies

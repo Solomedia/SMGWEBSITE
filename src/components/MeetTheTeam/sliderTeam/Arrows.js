@@ -1,13 +1,52 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { css } from '@emotion/core'
+import styled from '@emotion/styled'
+
 import { FaCaretRight, FaCaretLeft } from 'react-icons/fa'
-import theme from '../../../constants/theme-styles'
 
-const { breakpoint, color } = theme
+export const NextArrow = props => {
+	const { onClick } = props
 
-const arrowsStyles = css`
+	const Arrow = styled.div`
+		right: 2%;
+		/*
+		TODO: set media with props
+		*/
+		@media (max-width: 768px) {
+			right: 45%;
+		}
+	`
+
+	return (
+		<Arrow onClick={onClick} css={arrowsStyles}>
+			<FaCaretRight />
+		</Arrow>
+	)
+}
+
+export const PrevArrow = props => {
+	const { onClick } = props
+
+	const Arrow = styled.div`
+		right: 5%;
+
+		/*
+		TODO: set media with props
+		*/
+		@media (max-width: 768px) {
+			right: 55%;
+		}
+	`
+	return (
+		<Arrow onClick={onClick} css={arrowsStyles}>
+			<FaCaretLeft />
+		</Arrow>
+	)
+}
+
+//STYLES BLOCK
+const arrowsStyles = ({ color }) => css`
 	position: absolute;
 	bottom: -15%;
 	z-index: 9;
@@ -18,42 +57,7 @@ const arrowsStyles = css`
 		cursor: pointer;
 	}
 `
-
-export const NextArrow = props => {
-	const { onClick } = props
-
-	const styles = css`
-		${arrowsStyles};
-		right: 2%;
-
-		${breakpoint['phone']} {
-			right: 45%;
-		}
-	`
-	return (
-		<div css={styles} onClick={onClick}>
-			<FaCaretRight />
-		</div>
-	)
-}
-
-export const PrevArrow = props => {
-	const { onClick } = props
-
-	const styles = css`
-		${arrowsStyles};
-		right: 5%;
-
-		${breakpoint['phone']} {
-			right: 55%;
-		}
-	`
-	return (
-		<div css={styles} onClick={onClick}>
-			<FaCaretLeft />
-		</div>
-	)
-}
+//END STYLES
 
 const arrowsProptypes = {
 	onClick: PropTypes.func,

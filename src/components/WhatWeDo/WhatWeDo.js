@@ -6,6 +6,25 @@ import { Container, Row, Col } from '../../utils/grid'
 import Technologies from './Technologies'
 import Services from './Services/Services'
 
+const WhatWeDo = () => (
+	<section css={section}>
+		<Container>
+			<Row>
+				<Col>
+					<H1 css={title}>WE DO DESIGN & DEVELOPMENT.</H1>
+					<H2 large css={subtitle} className="large">
+						AND WE DO IT WELL.
+					</H2>
+				</Col>
+				<Col>
+					<Services />
+					<Technologies />
+				</Col>
+			</Row>
+		</Container>
+	</section>
+)
+
 //STYLES BLOCK
 const section = props => css`
 	background-color: ${props.color.primary};
@@ -34,24 +53,5 @@ const title = props => css`
 	}
 `
 //END STYLES BLOCK
-
-const WhatWeDo = () => (
-	<section css={section}>
-		<Container>
-			<Row>
-				<Col>
-					<H1 css={title}>WE DO DESIGN & DEVELOPMENT.</H1>
-					<H2 large css={subtitle} className="large">
-						AND WE DO IT WELL.
-					</H2>
-				</Col>
-				<Col>
-					<Services />
-					<Technologies />
-				</Col>
-			</Row>
-		</Container>
-	</section>
-)
 
 export default WhatWeDo

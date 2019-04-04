@@ -5,6 +5,24 @@ import LogoClutch from '../../images/banner-logos/logo-clutch.png'
 import LogoUpwork from '../../images/banner-logos/Logo-upwork.png'
 import { P } from '../../utils/type'
 
+const LogoList = () => (
+	<div css={logoListContainer}>
+		<P>AS SEEN ON:</P>
+		<ul css={logoList}>
+			<li>
+				<img src={LogoUpwork} alt="" />
+			</li>
+			<li
+				css={css`
+					margin-left: 20px;
+				`}
+			>
+				<img src={LogoClutch} alt="" />
+			</li>
+		</ul>
+	</div>
+)
+
 //STYLES BLOCK
 const logoListContainer = props => css`
 	align-items: center;
@@ -47,23 +65,5 @@ const logoList = props => css`
 	}
 `
 //END BLOCK
-
-const LogoList = () => (
-	<div css={logoListContainer}>
-		<P>AS SEEN ON:</P>
-		<ul css={logoList}>
-			<li>
-				<img src={LogoUpwork} alt="" />
-			</li>
-			<li
-				css={css`
-					margin-left: 20px;
-				`}
-			>
-				<img src={LogoClutch} alt="" />
-			</li>
-		</ul>
-	</div>
-)
 
 export default LogoList
