@@ -46,10 +46,10 @@ const MeetTheTeam = () => (
 //STYLES BLOCK
 
 const mainSection = props => css`
-	margin-top: 10%;
+	margin: 10% 0 20%;
 
 	${props.breakpoint['tablet']} {
-		margin-top: 90px;
+		margin: 90px 0 0;
 	}
 `
 const sectionHeader = props => css`

@@ -11,15 +11,15 @@ export const CustomThemeProvider = ({ children }) => {
 	const [themeColor, setThemeColor] = useState(theme.color)
 	const [themeName, setThemeName] = useState('Light')
 
+	const setTheme = (themeColor, themeName) => {
+		setThemeColor(themeColor)
+		setThemeName(themeName)
+	}
+
 	const changeThemeColor = () => {
-		if (themeColor === themeLight) {
-			setThemeColor(themeDark)
-			setThemeName('Dark')
-		}
-		if (themeColor === themeDark) {
-			setThemeColor(themeLight)
-			setThemeName('Light')
-		}
+		themeColor === themeLight
+			? setTheme(themeDark, 'Dark')
+			: setTheme(themeLight, 'Light')
 	}
 
 	return (

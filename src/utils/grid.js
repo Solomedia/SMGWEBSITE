@@ -10,9 +10,12 @@ const Container = styled.div`
 	padding: 0 ${gutterWidth / 2}px;
 	width: 100%;
 
-	&.container-fluid {
-		max-width: 100%;
-	}
+	${props =>
+		props['fluid'] &&
+		css`
+			max-width: 100%;
+			padding: 0;
+		`}
 `
 
 const Row = styled.div`
@@ -23,16 +26,30 @@ const Row = styled.div`
 	flex-wrap: wrap;
 	margin: 0 -${gutterWidth / 2}px;
 
-	&.reverse {
-		flex-direction: column-reverse;
-	}
+	${props =>
+		props['noGutters'] &&
+		css`
+			margin: 0;
+
+			& > div {
+				padding: 0;
+			}
+		`};
+
+	${props =>
+		props['reverse'] &&
+		css`
+			flex-direction: column-reverse;
+		`};
 
 	${breakpoint['tablet']} {
 		flex-direction: row;
 
-		&.reverse {
-			flex-direction: row-reverse;
-		}
+		${props =>
+			props['reverse'] &&
+			css`
+				flex-direction: row-reverse;
+			`}
 	}
 `
 
@@ -53,6 +70,14 @@ const Col = styled.div`
 		css`
 			${breakpoint['tabletOnly']} {
 				width: ${getWidth(props['colMd'])};
+			}
+		`}
+
+	${props =>
+		props['colMdUp'] &&
+		css`
+			${breakpoint['tablet']} {
+				width: ${getWidth(props['colMdUp'])};
 			}
 		`}
 
