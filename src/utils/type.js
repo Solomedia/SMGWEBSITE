@@ -48,8 +48,6 @@ const Quote = styled.blockquote`
 
 const Cite = styled.cite`
 	font-size: 21px;
-	font-style: italic;
-	font-weight: 500;
 	line-height: 25px;
 `
 
