@@ -2,16 +2,16 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import ClientQuote from './ClientQuote'
-import { H1 } from '../../utils/type'
+import { H1, P } from '../../utils/type'
 
 const Clients = () => (
 	<section css={clientSection}>
 		<div css={clientContent}>
 			<H1 css={header}>CLIENTS LOVE US.</H1>
-			<p css={paragraph}>
+			<P large subTitle>
 				WE’VE WORKED WITH ALL DIFFERENT KINDS OF BUSINESSES WHO ALL AGREE….WE
 				ROCK.
-			</p>
+			</P>
 			<ClientQuote />
 		</div>
 	</section>
@@ -58,16 +58,6 @@ const header = props => css`
 	${props.breakpoint['medium']} {
 		font-size: 43px;
 		line-height: 52px;
-	}
-`
-
-const paragraph = props => css`
-	font-size: 4vw;
-	line-height: 5vw;
-
-	${props.breakpoint['phoneSmallUp']} {
-		font-size: 25px;
-		line-height: 30px;
 	}
 `
 //END STYLES BLOCK
