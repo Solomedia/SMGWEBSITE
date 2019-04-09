@@ -8,6 +8,11 @@ const typeColor = props => css`
 const pSize = props => css`
 	font-size: ${props.large ? '21px' : '18px'};
 	line-height: ${props.large ? '25px' : '22px'};
+
+	${props.subTitle && props.theme.breakpoint['phoneSmall']} {
+		font-size: 5vw;
+		line-height: 6vw;
+	}}
 `
 
 const P = styled.p`
