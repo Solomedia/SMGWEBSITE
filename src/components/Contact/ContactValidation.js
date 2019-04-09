@@ -10,9 +10,8 @@ export const contactSchema = Yup.object().shape({
 		.required('Required'),
 	services: Yup.string().required('Service is required.'),
 	projectSummary: Yup.string()
-		.min(10, 'Too Short!')
-		.max(500, 'Too Long!')
-		.required('Required'),
+		.min(2, 'Too Short!')
+		.max(500, 'Too Long!'),
 })
 
 export const initialValues = {

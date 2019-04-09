@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
+import { FaCaretDown } from 'react-icons/fa'
 
 import { contactSchema, initialValues } from './ContactValidation'
 import Button from '../../utils/buttons'
@@ -36,6 +37,7 @@ const ContactForm = () => (
 						<option value="service-2">Service 2</option>
 						<option value="service-3">Service 3</option>
 					</Field>
+					<FaCaretDown css={selectArrow} />
 					{errors.services && touched.services ? (
 						<div css={formError}>{errors.services}</div>
 					) : null}
@@ -70,11 +72,23 @@ const formContainer = props => css`
 
 	select {
 		appearance: none;
+		color: ${props.color.doveGray};
+		text-transform: uppercase;
 	}
 
 	textarea {
 		min-height: 210px;
 	}
+`
+
+const selectArrow = ({ themeName, color }) => css`
+	fill: ${themeName === 'Light' ? color.primary : color.secondary};
+	height: 2.5em;
+	pointer-events: none;
+	position: absolute;
+	right: 4%;
+	top: 16%;
+	width: 1.9em;
 `
 
 const formGroup = css`
