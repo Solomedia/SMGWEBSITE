@@ -45,7 +45,6 @@ const subtitle = props => css`
 
 const title = props => css`
 	color: ${props.color.secondary};
-	text-align: center;
 
 	${props.breakpoint['phoneSmall']} {
 		font-size: 9vw;

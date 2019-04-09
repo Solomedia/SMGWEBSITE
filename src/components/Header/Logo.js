@@ -1,17 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
 
 import LogoImg from '../../images/logo-solo-media.png'
-import ThemeContext from '../../context/ThemeContext'
 
 const Logo = () => {
-	const theme = useContext(ThemeContext)
-
 	return (
 		<div css={logoContainer}>
-			<LogoHeader theme={theme}>
+			<h1 css={LogoHeader}>
 				<Link to="/">
 					<img
 						src={LogoImg}
@@ -21,34 +17,27 @@ const Logo = () => {
 						alt=""
 					/>
 				</Link>
-			</LogoHeader>
+			</h1>
 		</div>
 	)
 }
 
 //STYLED COMPONENTS
-const LogoHeader = styled.h1(
-	{
-		display: 'flex',
-		alignItems: 'center',
-		transition: 'width 1s linear',
-	},
-	({
-		theme: {
-			themeName,
-			theme: { color, breakpoint },
-		},
-	}) => ({
-		backgroundColor: themeName === 'Light' ? color.primary : color.secondary,
-		[breakpoint['phone']]: {
-			width: '150px',
-			margin: '0 auto',
-		},
-		[breakpoint['tablet']]: {
-			minHeight: '145px',
-		},
-	})
-)
+const LogoHeader = ({ color, breakpoint, themeName }) => css`
+	display: flex;
+	align-items: center;
+	transition: width 1s linear;
+	background-color: ${themeName === 'Light' ? color.primary : color.secondary};
+
+	${breakpoint['phone']} {
+		width: 150px;
+		margin: 0 auto;
+	}
+
+	${breakpoint['tablet']} {
+		min-height: 145px;
+	}
+`
 // END STYLED COMPONENTS
 
 //STYLES BLOCK

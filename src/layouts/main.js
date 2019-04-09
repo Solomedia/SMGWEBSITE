@@ -10,9 +10,11 @@ import ThemeContext from '../context/ThemeContext'
 
 const MainLayout = ({ children }) => {
 	const currentTheme = useContext(ThemeContext)
+	const theme = currentTheme.theme
+	theme.themeName = currentTheme.themeName
 
 	return (
-		<ThemeProvider theme={currentTheme.theme}>
+		<ThemeProvider theme={theme}>
 			<Global styles={globalStyles} />
 			<Header siteTitle="solo" />
 			<main>{children}</main>

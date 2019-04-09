@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 
 import { Quote, Cite } from '../../utils/type'
 import QuoteThumbnail from '../../images/quote-thumbnail.png'
+import theme from '../../constants/theme-styles'
 
 const ClientQuote = () => (
 	<Quote css={quote}>
@@ -22,27 +23,28 @@ const ClientQuote = () => (
 )
 
 //STYLES BLOCK
-const quote = props => css`
+const quote = ({ color, breakpoint, themeName }) => css`
 	border-radius: 10px;
-	border: 9px solid #dce0df;
-	padding: 45px 38px 20px 20px;
+	border: 9px solid ${themeName === 'Light' ? color.alto : color.secondary};
+	padding: 45px 38px 0 20px;
 	margin-top: 10%;
 	position: relative;
 	quotes: '„' '“';
 
-	${props.breakpoint['phoneSmall']} {
+	${breakpoint['phoneSmall']} {
 		margin-top: 20%;
+		padding-bottom: 20px;
 	}
 
-	${props.breakpoint['tablet']} {
+	${breakpoint['tablet']} {
 		margin-top: 65px;
 		padding: 45px 38px 0 20px;
 	}
 
 	&:before,
 	&:after {
-		background: ${props.color.primary};
-		color: ${props.color.secondary};
+		background: ${color.primary};
+		color: ${color.secondary};
 		content: '';
 		display: inline-block;
 		font-family: serif;
@@ -112,7 +114,7 @@ const quoteImage = props => css`
 	height: 125px;
 	width: 112px;
 
-	${props.breakpoint['phone']} {
+	${props.breakpoint['phoneSmall']} {
 		margin-bottom: 10px;
 	}
 `

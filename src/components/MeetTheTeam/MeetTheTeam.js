@@ -46,13 +46,14 @@ const MeetTheTeam = () => (
 //STYLES BLOCK
 
 const mainSection = props => css`
-	margin: 10% 0 20%;
+	padding: 10% 0 20%;
 
 	${props.breakpoint['tablet']} {
-		margin: 90px 0 0;
+		padding: 90px 0 0;
 	}
 `
 const sectionHeader = props => css`
+	margin-bottom: 20px;
 	text-align: center;
 
 	${props.breakpoint['phone']} {

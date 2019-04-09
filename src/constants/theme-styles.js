@@ -5,7 +5,7 @@ const gutterWidth = 30
 const breakpoint = {
 	phoneSmall: `@media (max-width: 576px)`,
 	phoneSmallUp: `@media (min-width: 576px)`,
-	phone: `@media (max-width: 768px)`,
+	phone: `@media (max-width: 767px)`,
 	tablet: `@media (min-width: 768px)`,
 	tabletOnly: `@media (min-width: 768px) and (max-width: 1023px)`,
 	medium: `@media (min-width: 992px)`,

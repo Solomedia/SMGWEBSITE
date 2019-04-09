@@ -28,11 +28,14 @@ const SliderTeam = ({ employeeList }) => (
 
 //STYLES BLOCK
 const sliderItem = props => css`
-	align-items: center;
 	display: flex !important;
 	flex-direction: column;
 	justify-content: space-around;
 	outline: none;
+
+	${props.breakpoint['phone']} {
+		align-items: center;
+	}
 
 	${props.breakpoint['tablet']} {
 		flex-direction: row;
@@ -77,11 +80,19 @@ const sliderItem = props => css`
 `
 
 const employeeThumbnail = props => css`
-	width: 35%;
+	width: 45%;
 
 	${props.breakpoint['phone']} {
-		width: 50%;
 		margin-bottom: 2%;
+		width: 50%;
+	}
+
+	${props.breakpoint['tablet']} {
+		align-self: flex-end;
+	}
+
+	${props.breakpoint['medium']} {
+		width: 35%;
 	}
 
 	img {
@@ -94,6 +105,15 @@ const infoBox = props => css`
 
 	${props.breakpoint['phone']} {
 		width: 90%;
+	}
+
+	${props.breakpoint['tablet']} {
+		align-self: center;
+		padding-bottom: 50px;
+	}
+
+	${props.breakpoint['medium']} {
+		margin-top: 50px;
 	}
 `
 //END STYLES BLOCK

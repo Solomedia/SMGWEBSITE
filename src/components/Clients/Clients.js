@@ -2,11 +2,12 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import ClientQuote from './ClientQuote'
+import { H1 } from '../../utils/type'
 
 const Clients = () => (
 	<section css={clientSection}>
 		<div css={clientContent}>
-			<h1 css={header}>CLIENTS LOVE US.</h1>
+			<H1 css={header}>CLIENTS LOVE US.</H1>
 			<p css={paragraph}>
 				WE’VE WORKED WITH ALL DIFFERENT KINDS OF BUSINESSES WHO ALL AGREE….WE
 				ROCK.
@@ -20,6 +21,7 @@ const Clients = () => (
 const clientSection = props => css`
 	background-color: ${props.color.primary};
 	display: flex;
+	height: 100%;
 	justify-content: flex-end;
 `
 
@@ -28,7 +30,7 @@ const clientContent = props => css`
 
 	${props.breakpoint['tablet']} {
 		max-width: 720px;
-		padding: 175px 25px 160px;
+		padding: 175px 25px 135px;
 	}
 
 	h1,
@@ -39,15 +41,12 @@ const clientContent = props => css`
 		position: relative;
 	}
 
-	& > h1,
 	& > p {
 		text-align: center;
 	}
 `
 
 const header = props => css`
-	font-size: 10vw;
-	line-height: 11vw;
 	margin-bottom: 5%;
 
 	${props.breakpoint['tablet']} {
