@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
-import { P } from '../../utils/type'
 import { css } from '@emotion/core'
-import ThemeContext from '../../context/ThemeContext'
+
+import ThemeContext from '../context/ThemeContext'
 
 const ThemeSwitch = () => {
 	const currentTheme = useContext(ThemeContext)
 
 	return (
 		<div css={themeSwitch}>
-			<P>Theme {currentTheme.themeName}</P>
+			<p css={themeName}>Theme {currentTheme.themeName}</p>
 			<label css={switchContent}>
 				<input
 					css={inputField}
@@ -24,15 +24,25 @@ const ThemeSwitch = () => {
 //STYLES BLOCK
 
 const themeSwitch = css`
-	padding-right: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 30px;
+	text-align: right;
+`
+
+const themeName = css`
+	font-size: 14px;
+	line-height: 14px;
+	margin-right: 10px;
 `
 
 const switchContent = css`
 	position: relative;
 	display: inline-block;
-	width: 90px;
-	height: 40px;
-	margin-top: 10px;
+	width: 60px;
+	height: 30px;
+	margin-top: 5px;
 
 	input {
 		opacity: 0;
@@ -58,11 +68,11 @@ const slider = props => css`
 		border-radius: 50%;
 		bottom: 4px;
 		content: '';
-		height: 30px;
+		height: 20px;
 		left: 4px;
 		position: absolute;
 		transition: 0.4s;
-		width: 30px;
+		width: 20px;
 	}
 `
 
@@ -76,7 +86,7 @@ const inputField = props => css`
 	}
 
 	&:checked + .slider:before {
-		transform: translateX(51px);
+		transform: translateX(29px);
 	}
 `
 //END STYLES

@@ -13,7 +13,7 @@ const ContactForm = () => (
 		validationSchema={contactSchema}
 		onSubmit={values => {
 			// same shape as initial values
-			console.log(values)
+			alert(values)
 		}}
 	>
 		{({ errors, touched }) => (
@@ -63,17 +63,8 @@ const formContainer = props => css`
 	input,
 	select,
 	textarea {
-		border-radius: 10px;
-		border: 3px solid ${props.color.primary};
 		margin-bottom: 3px;
 		padding: 25px 15px;
-		width: 100%;
-	}
-
-	select {
-		appearance: none;
-		color: ${props.color.doveGray};
-		text-transform: uppercase;
 	}
 
 	textarea {

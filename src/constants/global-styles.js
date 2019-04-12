@@ -11,25 +11,37 @@ const globalStyles = props => css`
 		overflow-x: hidden;
 	}
 	body {
-		color: ${props.color.primary};
 		background-color: ${props.color.secondary};
+		color: ${props.color.primary};
 	}
 	button,
 	input,
-	optgroup,
 	select,
 	textarea,
 	body {
 		font-family: 'Barlow', sans-serif;
 	}
 	input,
-	optgroup,
 	select,
 	textarea {
+		border-radius: 10px;
+		border: 3px solid ${props.color.primary};
+		padding: 10px;
+		width: 100%;
+
 		&:focus,
 		&:active {
 			outline: 0;
 		}
+
+		&:disabled {
+			opacity: 0.3;
+		}
+	}
+	select {
+		appearance: none;
+		color: ${props.color.doveGray};
+		text-transform: uppercase;
 	}
 	ul {
 		list-style: none;
@@ -45,7 +57,6 @@ const globalStyles = props => css`
 	}
 	p {
 		margin: 0;
-		color: ${props.color.primary};
 	}
 	a {
 		text-decoration: none;

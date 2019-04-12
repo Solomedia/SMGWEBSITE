@@ -1,15 +1,11 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-const typeColor = props => css`
-	color: ${props.theme.color.primary};
-`
-
 const pSize = props => css`
 	font-size: ${props.large ? '21px' : '18px'};
 	line-height: ${props.large ? '25px' : '22px'};
 
-	${props.subTitle && props.theme.breakpoint['phoneSmall']} {
+	${props.theme.breakpoint['phoneSmall']} {
 		font-size: 5vw;
 		line-height: 6vw;
 	}}
@@ -20,7 +16,6 @@ const P = styled.p`
 `
 
 const H1 = styled.h1`
-	${typeColor};
 	font-size: 54px;
 	font-weight: bold;
 	line-height: 65px;
@@ -38,7 +33,6 @@ const h2Size = props => css`
 `
 
 const H2 = styled.h2`
-	${typeColor};
 	${h2Size};
 	font-weight: 500;
 `
@@ -49,7 +43,6 @@ const h3size = props => css`
 `
 
 const H3 = styled.h3`
-	${typeColor};
 	${h3size};
 	font-weight: 500;
 `

@@ -32,7 +32,7 @@ const header = props => css`
 	}
 `
 
-const paragraph = props => css`
+const paragraph = css`
 	text-align: center;
 `
 //END STYLES
