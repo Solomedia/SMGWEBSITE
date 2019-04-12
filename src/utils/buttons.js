@@ -2,7 +2,8 @@ import styled from '@emotion/styled'
 
 const Button = styled.button`
 	label: button;
-	background-color: ${props => props.theme.color.cerulean};
+	background-color: ${props =>
+		props.secondary ? props.theme.color.lilacBush : props.theme.color.cerulean};
 	border-color: transparent;
 	border-radius: 10px;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -45,6 +46,10 @@ const Button = styled.button`
 			opacity: 0;
 			transform: translate(0, 0);
 		}
+	}
+
+	&:disabled {
+		opacity: 0.5;
 	}
 `
 

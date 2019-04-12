@@ -24,7 +24,8 @@ const Row = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	margin: 0 -${gutterWidth / 2}px;
+	margin-left: -${gutterWidth / 2}px;
+	margin-right: -${gutterWidth / 2}px;
 
 	${props =>
 		props['noGutters'] &&
