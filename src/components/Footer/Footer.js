@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import { Container, Row, Col } from '../../utils/grid'
 import { P } from '../../utils/type'
 
-import SocialNav from './SocialNav'
+import SocialNav from '../SocialNav'
 import Subscribe from './Subscribe/Subscribe'
 import ThemeSwitch from '../ThemeSwitch'
 

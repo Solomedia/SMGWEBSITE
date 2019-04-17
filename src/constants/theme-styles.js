@@ -29,6 +29,7 @@ export const themeLight = {
 	tundoraGray: '#4C4C4C',
 	lilacBush: '#A07FDA',
 	alto: '#D8D8D8',
+	overlay06: 'rgba(0, 0, 0, 0.6)',
 }
 
 export const themeDark = {
@@ -40,6 +41,7 @@ export const themeDark = {
 	tundoraGray: themeLight.tundoraGray,
 	lilacBush: themeLight.lilacBush,
 	alto: themeLight.alto,
+	overlay06: themeLight.overlay06,
 }
 
 const theme = {

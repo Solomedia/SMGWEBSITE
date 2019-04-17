@@ -4,15 +4,17 @@ import { css } from '@emotion/core'
 
 import Layout from '../layouts/layout'
 import { Container, Row, Col } from '../utils/grid'
-import Banner from '../components/BannerHome/Banner'
-import WhatWeDo from '../components/WhatWeDo/WhatWeDo'
-import MeetTheTeam from '../components/MeetTheTeam/MeetTheTeam'
+import Banner from '../components/BannerGuarantee/Banner'
 import Clients from '../components/Clients/Clients'
 import Contact from '../components/Contact/Contact'
+import GuarenteeDetails from '../components/GuaranteeDetails/GuaranteeDetails'
 
 const IndexPage = () => (
 	<Layout>
-		<SEO title="Home" keywords={['solo', 'media', 'web', 'app', 'design']} />
+		<SEO
+			title="Guarantee"
+			keywords={['solo', 'media', 'web', 'app', 'design']}
+		/>
 		<Container>
 			<Row>
 				<Col>
@@ -20,8 +22,9 @@ const IndexPage = () => (
 				</Col>
 			</Row>
 		</Container>
-		<WhatWeDo />
-		<MeetTheTeam />
+
+		<GuarenteeDetails />
+
 		<section css={splitSection}>
 			<Container>
 				<Row noGutters>

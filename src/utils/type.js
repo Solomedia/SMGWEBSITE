@@ -11,15 +11,19 @@ const pSize = props => css`
 	}}
 `
 
+const aligment = props => css`
+	text-align: ${props.left ? 'left' : props.right ? 'right' : 'center'};
+`
+
 const P = styled.p`
 	${pSize}
 `
 
 const H1 = styled.h1`
+	${aligment};
 	font-size: 54px;
-	font-weight: bold;
+	font-weight: 700;
 	line-height: 65px;
-	text-align: center;
 
 	${props => `${props.theme.breakpoint['phoneSmall']}`} {
 		font-size: 10vw;
