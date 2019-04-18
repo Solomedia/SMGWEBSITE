@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
-import { P } from '../../utils/type'
+import { P } from '../utils/type'
 
 const socialList = [
 	{
