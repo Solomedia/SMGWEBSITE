@@ -56,7 +56,7 @@ const ContactForm = () => (
 
 //STYLES BLOCK
 
-const formContainer = props => css`
+const formContainer = css`
 	margin-top: 45px;
 	text-align: center;
 

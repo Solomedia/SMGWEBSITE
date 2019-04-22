@@ -1,8 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import PropTypes from 'prop-types'
 
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
-import { P } from '../utils/type'
 
 const socialList = [
 	{
@@ -19,34 +19,22 @@ const socialList = [
 	},
 ]
 
-const SocialNav = () => {
+const SocialNav = ({ className }) => {
 	return (
-		<div css={socialNavContent}>
-			<P css={title}>CONNECT WITH US.</P>
-			<ul css={socialNav}>
-				{socialList.map(({ Icon, name }) => (
-					<li css={socialItem} key={name}>
-						<Icon />
-					</li>
-				))}
-			</ul>
-		</div>
+		<ul className={className} css={socialNavigation}>
+			{socialList.map(({ Icon, name }) => (
+				<li key={name} css={socialItem}>
+					<Icon css={icon} />
+				</li>
+			))}
+		</ul>
 	)
 }
 
 //STYLES BLOCK
-
-const socialNavContent = css`
-	text-align: center;
-`
-
-const title = css`
-	margin-bottom: 20px;
-	font-weight: 600;
-`
-
-const socialNav = css`
+const socialNavigation = css`
 	display: inline-flex;
+	padding: 30px;
 `
 
 const socialItem = props => css`
@@ -58,16 +46,16 @@ const socialItem = props => css`
 	margin: 0 20px;
 	transform: rotate(50deg);
 	width: 52px;
-
-	&:last-of-type {
-		margin-right: 0;
-	}
-
-	svg {
-		height: 18px;
-		transform: rotate(-50deg);
-	}
+`
+const icon = props => css`
+	fill: ${props.color.primary};
+	height: 18px;
+	transform: rotate(-50deg);
 `
 //END STYLES
+
+SocialNav.propTypes = {
+	className: PropTypes.any,
+}
 
 export default SocialNav

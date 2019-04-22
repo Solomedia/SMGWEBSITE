@@ -21,7 +21,10 @@ const Footer = () => {
 										<div css={guarantee}>
 											<P css={title}>OUR GUARANTEE</P>
 										</div>
-										<SocialNav />
+										<div css={socialNavContent}>
+											<P css={socialTitle}>CONNECT WITH US.</P>
+											<SocialNav />
+										</div>
 									</Col>
 									<Col
 										colMdUp="6"
@@ -75,6 +78,15 @@ const guarantee = css`
 `
 
 const title = css`
+	font-weight: 600;
+`
+
+const socialNavContent = css`
+	text-align: center;
+`
+
+const socialTitle = css`
+	margin-bottom: 20px;
 	font-weight: 600;
 `
 //END STYLES
