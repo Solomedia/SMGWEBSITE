@@ -22,14 +22,8 @@ const Technologies = () => (
 				/>
 			))}
 		</ul>
-		<footer
-			css={css`
-				margin-top: 50px;
-			`}
-		>
-			<P large css={paragraph}>
-				READY TO GET STARTED?
-			</P>
+		<footer css={footer}>
+			<P large>READY TO GET STARTED?</P>
 			<Button>LET’S TALK.</Button>
 		</footer>
 	</section>
@@ -57,8 +51,9 @@ const technologiesList = props => css`
 
 const technologiesItem = props => css`
 	color: ${props.color.secondary};
-	font-size: 3.5vw;
-	line-height: 4.4vw;
+	font-size: 5vw;
+	line-height: 7vw;
+
 	margin-bottom: 3%;
 	padding: 0 10px;
 	text-align: center;
@@ -67,9 +62,9 @@ const technologiesItem = props => css`
 		border-right: none;
 	}
 
-	${props.breakpoint['phoneSmall']} {
-		font-size: 5vw;
-		line-height: 7vw;
+	${props.breakpoint['phoneSmallUp']} {
+		font-size: 3.5vw;
+		line-height: 4.4vw;
 	}
 
 	${props.breakpoint['tablet']} {
@@ -96,9 +91,13 @@ const technologiesItem = props => css`
 	}
 `
 
-const paragraph = props => css`
-	color: ${props.color.secondary};
-	margin-bottom: 20px;
+const footer = props => css`
+	margin-top: 50px;
+
+	p {
+		color: ${props.color.secondary};
+		margin-bottom: 20px;
+	}
 `
 //END STYLES BLOCK
 

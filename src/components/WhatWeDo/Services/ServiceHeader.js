@@ -30,12 +30,10 @@ const titleStyles = props => css`
 	align-items: center;
 	color: ${props.color.secondary};
 	display: flex;
-	font-size: 49px;
-	line-height: 51px;
+	font-size: 8vw;
 
-	${props.breakpoint['phoneSmall']} {
-		font-size: 8vw;
-		line-height: 9vh;
+	${props.breakpoint['phoneSmallUp']} {
+		font-size: 49px;
 	}
 
 	span {

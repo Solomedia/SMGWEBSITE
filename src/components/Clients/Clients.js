@@ -8,7 +8,7 @@ const Clients = () => (
 	<section css={clientSection}>
 		<div css={clientContent}>
 			<H1 css={header}>CLIENTS LOVE US.</H1>
-			<P large subTitle>
+			<P large>
 				WE’VE WORKED WITH ALL DIFFERENT KINDS OF BUSINESSES WHO ALL AGREE….WE
 				ROCK.
 			</P>
@@ -40,10 +40,6 @@ const clientContent = props => css`
 		color: ${props.color.secondary};
 		position: relative;
 	}
-
-	& > p {
-		text-align: center;
-	}
 `
 
 const header = props => css`
@@ -51,13 +47,11 @@ const header = props => css`
 
 	${props.breakpoint['tablet']} {
 		font-size: 41px;
-		line-height: 50px;
 		margin-bottom: 30px;
 	}
 
 	${props.breakpoint['medium']} {
 		font-size: 43px;
-		line-height: 52px;
 	}
 `
 //END STYLES BLOCK

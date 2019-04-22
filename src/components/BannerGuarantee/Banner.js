@@ -35,7 +35,6 @@ const Banner = () => (
 const bannerTitle = props => css`
 	font-size: 5.5vw;
 	font-weight: 400;
-	line-height: 1.2;
 	margin: 10% 0 5%;
 	text-align: center;
 

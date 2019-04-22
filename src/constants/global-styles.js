@@ -13,6 +13,7 @@ const globalStyles = props => css`
 	body {
 		background-color: ${props.color.secondary};
 		color: ${props.color.primary};
+		line-height: 1.2;
 	}
 	button,
 	input,

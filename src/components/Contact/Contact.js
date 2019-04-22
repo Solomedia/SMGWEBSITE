@@ -7,7 +7,7 @@ import ContactForm from './ContactForm'
 const Contact = () => (
 	<section css={contactSection}>
 		<H1 css={header}>CONTACT US.</H1>
-		<P large subTitle css={paragraph}>
+		<P large>
 			IF YOUR’E INTERESTED IN WORKING TOGETHER OR HAVE QUESTIONS…FILL OUT THE
 			Contact BELOW.
 		</P>
@@ -25,15 +25,10 @@ const contactSection = css`
 
 const header = props => css`
 	margin-bottom: 30px;
-	text-align: center;
 
 	${props.breakpoint['phoneSmall']} {
 		margin-bottom: 5%;
 	}
-`
-
-const paragraph = css`
-	text-align: center;
 `
 //END STYLES
 

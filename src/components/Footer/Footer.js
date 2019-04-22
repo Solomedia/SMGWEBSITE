@@ -19,10 +19,12 @@ const Footer = () => {
 								<Row>
 									<Col colMdUp="6" css={footerCol}>
 										<div css={guarantee}>
-											<P css={title}>OUR GUARANTEE</P>
+											<P weight="600">OUR GUARANTEE</P>
 										</div>
-										<div css={socialNavContent}>
-											<P css={socialTitle}>CONNECT WITH US.</P>
+										<div>
+											<P weight="600" css={socialTitle}>
+												CONNECT WITH US.
+											</P>
 											<SocialNav />
 										</div>
 									</Col>
@@ -77,17 +79,8 @@ const guarantee = css`
 	margin-bottom: 50px;
 `
 
-const title = css`
-	font-weight: 600;
-`
-
-const socialNavContent = css`
-	text-align: center;
-`
-
 const socialTitle = css`
 	margin-bottom: 20px;
-	font-weight: 600;
 `
 //END STYLES
 
