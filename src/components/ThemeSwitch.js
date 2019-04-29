@@ -33,7 +33,6 @@ const themeSwitch = css`
 
 const themeName = css`
 	font-size: 14px;
-	line-height: 14px;
 	margin-right: 10px;
 `
 

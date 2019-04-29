@@ -9,7 +9,7 @@ import Button from '../../../utils/buttons'
 const Subscribe = () => {
 	return (
 		<div css={subscribe}>
-			<P css={title}>STAY WOKE.</P>
+			<P weight="600">STAY WOKE.</P>
 			<P>
 				SUBSCRIBE TO SEE WHAT’S GOING ON WITHIN SOLO MEDIA AND THE DESIGN &
 				DEVELOPMENT WORLD.
@@ -63,10 +63,6 @@ const subscribe = props => css`
 	${props.breakpoint['tablet']} {
 		text-align: left;
 	}
-`
-
-const title = css`
-	font-weight: 600;
 `
 
 const form = props => css`

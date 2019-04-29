@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import { css } from '@emotion/core'
 
-import { P } from '../../../utils/type'
+import { H2, H3, P } from '../../../utils/type'
 import SliderSettings from './SliderSettings'
 
 const SliderTeam = ({ employeeList }) => (
@@ -17,7 +17,7 @@ const SliderTeam = ({ employeeList }) => (
 					<h2>{employee.name}</h2>
 					<h3>{employee.position}</h3>
 					<i className="icon-arrow-right" />
-					<P large>
+					<P large left sizeSmall="4vw">
 						<strong>BIO:</strong> {employee.bio}
 					</P>
 				</div>
@@ -44,16 +44,15 @@ const sliderItem = props => css`
 
 	h2,
 	h3 {
-		font-size: 44px;
-		line-height: 53px;
+		font-size: 8vw;
 
 		${props.breakpoint['phone']} {
 			text-align: center;
 		}
 
-		${props.breakpoint['phoneSmall']} {
-			font-size: 8vw;
-			line-height: 9.2vw;
+		${props.breakpoint['tablet']} {
+			font-size: 44px;
+			text-align: left;
 		}
 	}
 
@@ -64,17 +63,6 @@ const sliderItem = props => css`
 
 		${props.breakpoint['phone']} {
 			margin-bottom: 4%;
-		}
-	}
-
-	p {
-		${props.breakpoint['phone']} {
-			text-align: center;
-		}
-
-		${props.breakpoint['phoneSmall']} {
-			font-size: 4vw;
-			line-height: 5vw;
 		}
 	}
 `

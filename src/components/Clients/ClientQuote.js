@@ -51,6 +51,7 @@ const quote = ({ color, breakpoint, themeName }) => css`
 	&:before {
 		content: open-quote;
 		left: 0;
+		line-height: 27px;
 		top: 0;
 		transform: translate(-50%, -50%);
 	}

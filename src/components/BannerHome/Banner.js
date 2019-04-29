@@ -33,8 +33,6 @@ const bannerTitle = props => css`
 	margin-bottom: 80px;
 
 	${props.breakpoint['phone']} {
-		font-size: 5.3vw;
-		line-height: 6.5vw;
 		margin-bottom: 10%;
 	}
 `

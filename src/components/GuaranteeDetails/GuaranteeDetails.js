@@ -49,11 +49,9 @@ const title = props => css`
 
 const subTitle = props => css`
 	font-size: 7vw;
-	line-height: 1.2;
 
 	${props.breakpoint['phoneSmallUp']} {
 		font-size: 50px;
-		line-height: 41px;
 	}
 `
 //END STYLES

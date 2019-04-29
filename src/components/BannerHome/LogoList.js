@@ -12,11 +12,7 @@ const LogoList = () => (
 			<li>
 				<img src={LogoUpwork} alt="" />
 			</li>
-			<li
-				css={css`
-					margin-left: 20px;
-				`}
-			>
+			<li>
 				<img src={LogoClutch} alt="" />
 			</li>
 		</ul>
@@ -32,10 +28,8 @@ const logoListContainer = props => css`
 	${props.breakpoint['phoneSmall']} {
 		flex-direction: column;
 		margin: 10% 0 5%;
-	}
 
-	p {
-		${props.breakpoint['phoneSmall']} {
+		p {
 			margin-bottom: 10px;
 		}
 	}
@@ -53,10 +47,15 @@ const logoList = props => css`
 	}
 
 	li {
-		width: 160px;
+		width: 40%;
+		margin-left: 20px;
 
-		${props.breakpoint['phoneSmall']} {
-			width: 40%;
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		${props.breakpoint['phoneSmallUp']} {
+			width: 160px;
 		}
 
 		img {

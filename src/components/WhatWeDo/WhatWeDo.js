@@ -33,12 +33,10 @@ const section = props => css`
 
 const subtitle = props => css`
 	color: ${props.color.secondary};
-	text-align: center;
 
 	&.large {
 		${props.breakpoint['phoneSmall']} {
 			font-size: 6vw;
-			line-height: 8vw;
 		}
 	}
 `
@@ -48,7 +46,6 @@ const title = props => css`
 
 	${props.breakpoint['phoneSmall']} {
 		font-size: 9vw;
-		line-height: 11vw;
 	}
 `
 //END STYLES BLOCK

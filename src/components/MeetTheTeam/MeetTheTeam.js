@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-import { H1 } from '../../utils/type'
+import { H1, P } from '../../utils/type'
 import JhonThumbnail from '../../images/meet-the-team/jhon.png'
 import HannahThumbnail from '../../images/meet-the-team/hannah.png'
 import { Container, Row, Col } from '../../utils/grid'
@@ -33,8 +33,8 @@ const MeetTheTeam = () => (
 			<Row>
 				<Col>
 					<header css={sectionHeader}>
-						<H1 css={sectionTitle}>Meet the team</H1>
-						<p css={headerSlogan}>OVER 10 YEARS OF EXPERIENCE.</p>
+						<H1>Meet the team</H1>
+						<P size="29px">OVER 10 YEARS OF EXPERIENCE.</P>
 					</header>
 					<SliderTeam employeeList={data} />
 				</Col>
@@ -54,7 +54,6 @@ const mainSection = props => css`
 `
 const sectionHeader = props => css`
 	margin-bottom: 20px;
-	text-align: center;
 
 	${props.breakpoint['phone']} {
 		margin-bottom: 5%;
@@ -62,23 +61,6 @@ const sectionHeader = props => css`
 
 	${props.breakpoint['medium']} {
 		margin-bottom: -70px;
-	}
-`
-
-const sectionTitle = props => css`
-	${props.breakpoint['phoneSmall']} {
-		font-size: 10vw;
-		line-height: 11.3vw;
-	}
-`
-
-const headerSlogan = props => css`
-	font-size: 29px;
-	line-height: 35px;
-
-	${props.breakpoint['phoneSmall']} {
-		font-size: 5vw;
-		line-height: 6vw;
 	}
 `
 //END STYLES BLOCK
