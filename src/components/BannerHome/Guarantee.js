@@ -1,22 +1,22 @@
-import React from 'react'
-import { css } from '@emotion/core'
-import { Link } from 'gatsby'
+import React from 'react';
+import { css } from '@emotion/core';
+import { Link } from 'gatsby';
 
-import { H2 } from '../../utils/type'
-import Button from '../../utils/buttons'
+import { H2 } from '../../utils/type';
+import Button from '../../utils/buttons';
 
 const Guarantee = () => (
 	<React.Fragment>
 		<div css={quarantee}>
 			<H2>WE GUARANTEE IT.</H2>
-			<Link to="#">OUR GUARANTEE</Link>
+			<Link to="/guarantee">OUR GUARANTEE</Link>
 		</div>
 
 		<div>
 			<Button>Let&#39;s Talk</Button>
 		</div>
 	</React.Fragment>
-)
+);
 
 //STYLES BLOCK
 const quarantee = props => css`
@@ -29,7 +29,7 @@ const quarantee = props => css`
 			font-size: 23px;
 		}
 	}
-`
+`;
 //END STYLES BLOCK
 
-export default Guarantee
+export default Guarantee;

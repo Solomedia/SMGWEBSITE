@@ -1,14 +1,14 @@
-import React from 'react'
-import SEO from '../components/seo'
-import { css } from '@emotion/core'
+import React from 'react';
+import SEO from '../components/seo';
+import { css } from '@emotion/core';
 
-import Layout from '../layouts/layout'
-import { Container, Row, Col } from '../utils/grid'
-import Banner from '../components/BannerHome/Banner'
-import WhatWeDo from '../components/WhatWeDo/WhatWeDo'
-import MeetTheTeam from '../components/MeetTheTeam/MeetTheTeam'
-import Clients from '../components/Clients/Clients'
-import Contact from '../components/Contact/Contact'
+import Layout from '../layouts/layout';
+import { Container, Row, Col } from '../utils/grid';
+import Banner from '../components/BannerHome/Banner';
+import WhatWeDo from '../components/WhatWeDo/WhatWeDo';
+import MeetTheTeam from '../components/MeetTheTeam/MeetTheTeam';
+import Clients from '../components/Clients/Clients';
+import Contact from '../components/Contact/Contact';
 
 const IndexPage = () => (
 	<Layout>
@@ -35,7 +35,7 @@ const IndexPage = () => (
 			</Container>
 		</section>
 	</Layout>
-)
+);
 
 const splitSection = props => css`
 	${props.breakpoint['tablet']} {
@@ -47,6 +47,6 @@ const splitSection = props => css`
 			${props.color.secondary} 100%
 		);
 	}
-`
+`;
 
-export default IndexPage
+export default IndexPage;
