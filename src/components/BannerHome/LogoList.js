@@ -1,23 +1,27 @@
-import React from 'react'
-import { css } from '@emotion/core'
+import React from 'react';
+import { css } from '@emotion/core';
 
-import LogoClutch from '../../images/banner-logos/logo-clutch.png'
-import LogoUpwork from '../../images/banner-logos/Logo-upwork.png'
-import { P } from '../../utils/type'
+import LogoClutch from '../../images/banner-logos/logo-clutch.png';
+import LogoUpwork from '../../images/banner-logos/Logo-upwork.png';
+import { P } from '../../utils/type';
 
 const LogoList = () => (
 	<div css={logoListContainer}>
 		<P>AS SEEN ON:</P>
 		<ul css={logoList}>
 			<li>
-				<img src={LogoUpwork} alt="" />
+				<a href="https://www.upwork.com/fl/johnathansolorzano" target="_blank">
+					<img src={LogoUpwork} alt="Upwork" />
+				</a>
 			</li>
 			<li>
-				<img src={LogoClutch} alt="" />
+				<a href="https://clutch.co/profile/solo-media-group" target="_blank">
+					<img src={LogoClutch} alt="Clutch" />
+				</a>
 			</li>
 		</ul>
 	</div>
-)
+);
 
 //STYLES BLOCK
 const logoListContainer = props => css`
@@ -33,7 +37,7 @@ const logoListContainer = props => css`
 			margin-bottom: 10px;
 		}
 	}
-`
+`;
 
 const logoList = props => css`
 	align-items: center;
@@ -62,7 +66,7 @@ const logoList = props => css`
 			width: 100%;
 		}
 	}
-`
+`;
 //END BLOCK
 
-export default LogoList
+export default LogoList;
