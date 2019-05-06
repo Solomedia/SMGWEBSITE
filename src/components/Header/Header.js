@@ -1,9 +1,9 @@
-import React from 'react'
-import { css } from '@emotion/core'
+import React from 'react';
+import { css } from '@emotion/core';
 
-import { H3 } from '../../utils/type'
-import { Container, Row, Col } from '../../utils/grid'
-import Logo from './Logo'
+import { H3 } from '../../utils/type';
+import { Container, Row, Col } from '../../utils/grid';
+import Logo from './Logo';
 
 const Header = () => (
 	<header>
@@ -17,15 +17,19 @@ const Header = () => (
 						</div>
 						<Logo />
 						<div css={rightCol}>
-							<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
-							<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
+							<a css={anchor} href="tel:+1 917 310 1803">
+								<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
+							</a>
+							<a css={anchor} href="mailto:INFO@SOLOMEDIAGROUP.CO">
+								<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
+							</a>
 						</div>
 					</section>
 				</Col>
 			</Row>
 		</Container>
 	</header>
-)
+);
 
 //STYLES BLOCK
 const HeaderContent = props => css`
@@ -40,11 +44,11 @@ const HeaderContent = props => css`
 		flex-wrap: nowrap;
 		justify-content: center;
 	}
-`
+`;
 
 const headerCol = css`
 	margin-bottom: 10px;
-`
+`;
 
 const rightCol = props => css`
 	${props.breakpoint['phone']} {
@@ -52,7 +56,7 @@ const rightCol = props => css`
 		order: 2;
 		padding-left: 10px;
 	}
-`
+`;
 
 const lefCol = props => css`
 	text-align: right;
@@ -61,13 +65,13 @@ const lefCol = props => css`
 		${headerCol};
 		order: 1;
 	}
-`
+`;
 
 const subTitle = props => css`
 	${props.breakpoint['phoneSmall']} {
 		text-align: center;
 	}
-`
+`;
 
 const customTitles = props => css`
 	font-size: 18px;
@@ -80,7 +84,17 @@ const customTitles = props => css`
 		font-size: 17px;
 		margin-top: 5px;
 	}
-`
+`;
+
+const anchor = props => css`
+	text-decoration: none;
+	color: inherit;
+
+	:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+`;
 //END STYLES
 
-export default Header
+export default Header;
