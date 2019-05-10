@@ -1,58 +1,90 @@
-import React from 'react'
-import { Formik, Form, Field } from 'formik'
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
-import { FaCaretDown } from 'react-icons/fa'
+import React from 'react';
+import { Formik, Form, Field } from 'formik';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+import { FaCaretDown } from 'react-icons/fa';
 
-import { contactSchema, initialValues } from './ContactValidation'
-import Button from '../../utils/buttons'
+import { contactSchema, initialValues } from './ContactValidation';
+import Button from '../../utils/buttons';
+import { StaticQuery, graphql } from 'gatsby';
 
 const ContactForm = () => (
-	<Formik
-		initialValues={initialValues}
-		validationSchema={contactSchema}
-		onSubmit={values => {
-			// same shape as initial values
-			alert(values)
-		}}
-	>
-		{({ errors, touched }) => (
-			<Form css={formContainer}>
-				<div css={formGroup}>
-					<Field name="name" placeholder="NAME" />
-					{errors.name && touched.name ? (
-						<div css={formError}>{errors.name}</div>
-					) : null}
-				</div>
-				<div css={formGroup}>
-					<Field name="email" type="email" placeholder="E-MAIL" />
-					{errors.email && touched.email ? (
-						<div css={formError}>{errors.email}</div>
-					) : null}
-				</div>
-				<div css={formGroup}>
-					<Field component="select" name="services">
-						<option value="">SERVICES</option>
-						<option value="service-1">Service 1</option>
-						<option value="service-2">Service 2</option>
-						<option value="service-3">Service 3</option>
-					</Field>
-					<FaCaretDown css={selectArrow} />
-					{errors.services && touched.services ? (
-						<div css={formError}>{errors.services}</div>
-					) : null}
-				</div>
-				<div css={formGroup}>
-					<Field component={() => <textarea placeholder="PROJECT SUMMARY" />} />
-					{errors.projectSummary && touched.projectSummary ? (
-						<div css={formError}>{errors.projectSummary}</div>
-					) : null}
-				</div>
-				<SubmitButton type="submit">Let&#39;s Talk</SubmitButton>
-			</Form>
+	<StaticQuery
+		query={graphql`
+			query {
+				allWordpressPost {
+					edges {
+						node {
+							categories {
+								name
+							}
+							acf {
+								service
+							}
+						}
+					}
+				}
+			}
+		`}
+		render={data => (
+			<Formik
+				initialValues={initialValues}
+				validationSchema={contactSchema}
+				onSubmit={values => {
+					// same shape as initial values
+					alert(values);
+				}}
+			>
+				{({ errors, touched }) => (
+					<Form css={formContainer}>
+						<div css={formGroup}>
+							<Field name="name" placeholder="NAME" />
+							{errors.name && touched.name ? (
+								<div css={formError}>{errors.name}</div>
+							) : null}
+						</div>
+						<div css={formGroup}>
+							<Field name="email" type="email" placeholder="E-MAIL" />
+							{errors.email && touched.email ? (
+								<div css={formError}>{errors.email}</div>
+							) : null}
+						</div>
+						<div css={formGroup}>
+							<Field component="select" name="services">
+								<option value="">SERVICES</option>
+								{data.allWordpressPost.edges.map(key => {
+									return (
+										key.node.categories[0].name === 'Services' && (
+											<option
+												key={key.node.acf.service}
+												value={key.node.acf.service}
+											>
+												{key.node.acf.service}
+											</option>
+										)
+									);
+								})}
+							</Field>
+							<FaCaretDown css={selectArrow} />
+							{errors.services && touched.services ? (
+								<div css={formError}>{errors.services}</div>
+							) : null}
+						</div>
+						<div css={formGroup}>
+							<Field
+								component={() => <textarea placeholder="PROJECT SUMMARY" />}
+							/>
+							{errors.projectSummary && touched.projectSummary ? (
+								<div css={formError}>{errors.projectSummary}</div>
+							) : null}
+						</div>
+						<SubmitButton type="submit">Let&#39;s Talk</SubmitButton>
+					</Form>
+				)}
+			</Formik>
 		)}
-	</Formik>
-)
+	/>
+);
 
 //STYLES BLOCK
 
@@ -70,7 +102,7 @@ const formContainer = css`
 	textarea {
 		min-height: 210px;
 	}
-`
+`;
 
 const selectArrow = ({ themeName, color }) => css`
 	fill: ${themeName === 'Light' ? color.primary : color.secondary};
@@ -80,18 +112,18 @@ const selectArrow = ({ themeName, color }) => css`
 	right: 4%;
 	top: 16%;
 	width: 1.9em;
-`
+`;
 
 const formGroup = css`
 	margin-bottom: 20px;
 	position: relative;
-`
+`;
 
 const formError = css`
 	color: red;
 	padding-left: 10px;
 	text-align: left;
-`
+`;
 
 const SubmitButton = styled(Button)`
 	margin-top: 65px;
@@ -99,7 +131,7 @@ const SubmitButton = styled(Button)`
 	${props => `${props.theme.breakpoint['phone']}`} {
 		margin-top: 20px;
 	}
-`
+`;
 //END STYLES
 
-export default ContactForm
+export default ContactForm;

@@ -9,32 +9,54 @@ import WhatWeDo from '../components/WhatWeDo/WhatWeDo';
 import MeetTheTeam from '../components/MeetTheTeam/MeetTheTeam';
 import Clients from '../components/Clients/Clients';
 import Contact from '../components/Contact/Contact';
+import { StaticQuery, graphql } from 'gatsby';
 
 const IndexPage = () => (
-	<Layout>
-		<SEO title="Home" keywords={['solo', 'media', 'web', 'app', 'design']} />
-		<Container>
-			<Row>
-				<Col>
-					<Banner />
-				</Col>
-			</Row>
-		</Container>
-		<WhatWeDo />
-		<MeetTheTeam />
-		<section css={splitSection}>
-			<Container>
-				<Row noGutters>
-					<Col col="12" colMdUp="6">
-						<Clients />
-					</Col>
-					<Col col="12" colMdUp="6">
-						<Contact />
-					</Col>
-				</Row>
-			</Container>
-		</section>
-	</Layout>
+	<StaticQuery
+		query={graphql`
+			query {
+				site {
+					siteMetadata {
+						title
+						description
+						author
+					}
+				}
+			}
+		`}
+		render={data => (
+			<Layout>
+				<SEO
+					title={data.site.siteMetadata.title}
+					keywords={['solo', 'media', 'web', 'app', 'design']}
+					description={data.site.siteMetadata.description}
+					lang="en-US"
+					author={data.site.siteMetadata.author}
+				/>
+				<Container>
+					<Row>
+						<Col>
+							<Banner />
+						</Col>
+					</Row>
+				</Container>
+				<WhatWeDo />
+				<MeetTheTeam />
+				<section css={splitSection}>
+					<Container>
+						<Row noGutters>
+							<Col col="12" colMdUp="6">
+								<Clients />
+							</Col>
+							<Col col="12" colMdUp="6">
+								<Contact />
+							</Col>
+						</Row>
+					</Container>
+				</section>
+			</Layout>
+		)}
+	/>
 );
 
 const splitSection = props => css`

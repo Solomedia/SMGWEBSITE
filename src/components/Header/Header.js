@@ -4,31 +4,59 @@ import { css } from '@emotion/core';
 import { H3 } from '../../utils/type';
 import { Container, Row, Col } from '../../utils/grid';
 import Logo from './Logo';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Header = () => (
-	<header>
-		<Container>
-			<Row>
-				<Col>
-					<section css={HeaderContent}>
-						<div css={lefCol}>
-							<H3 css={subTitle}>SOLO MEDIA GROUP</H3>
-							<H3 css={customTitles}>DESIGN & DEVELOPMENT AGENCY</H3>
-						</div>
-						<Logo />
-						<div css={rightCol}>
-							<a css={anchor} href="tel:+1 917 310 1803">
-								<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
-							</a>
-							<a css={anchor} href="mailto:INFO@SOLOMEDIAGROUP.CO">
-								<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
-							</a>
-						</div>
-					</section>
-				</Col>
-			</Row>
-		</Container>
-	</header>
+	<StaticQuery
+		query={graphql`
+			query {
+				allWordpressPost {
+					edges {
+						node {
+							categories {
+								name
+							}
+							acf {
+								title
+								description
+								phone
+								email_address
+								logo {
+									source_url
+								}
+							}
+						}
+					}
+				}
+			}
+		`}
+		render={data => (
+			<header>
+				{console.log(data)}
+				<Container>
+					<Row>
+						<Col>
+							<section css={HeaderContent}>
+								<div css={lefCol}>
+									<H3 css={subTitle}>SOLO MEDIA GROUP</H3>
+									<H3 css={customTitles}>DESIGN & DEVELOPMENT AGENCY</H3>
+								</div>
+								<Logo />
+								<div css={rightCol}>
+									<a css={anchor} href="tel:+1 917 310 1803">
+										<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
+									</a>
+									<a css={anchor} href="mailto:INFO@SOLOMEDIAGROUP.CO">
+										<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
+									</a>
+								</div>
+							</section>
+						</Col>
+					</Row>
+				</Container>
+			</header>
+		)}
+	/>
 );
 
 //STYLES BLOCK

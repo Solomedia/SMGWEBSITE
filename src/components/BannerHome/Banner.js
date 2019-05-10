@@ -1,21 +1,41 @@
-import React from 'react'
-import { css } from '@emotion/core'
+import React from 'react';
+import { css } from '@emotion/core';
 
-import { H1 } from '../../utils/type'
-import HandImage from '../../images/banner-logos/hand-image.png'
-import Guarantee from './Guarantee'
-import LogoList from './LogoList'
+import { H1 } from '../../utils/type';
+import HandImage from '../../images/banner-logos/hand-image.png';
+import Guarantee from './Guarantee';
+import LogoList from './LogoList';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Banner = () => (
-	<section css={bannerContent}>
-		<img src={HandImage} alt="" css={handImageBox} />
-		<H1 css={bannerTitle}>
-			ALL PROJECTS DELIVERED ON TIME, ON BUDGET, & ON SCOPE.
-		</H1>
-		<Guarantee />
-		<LogoList />
-	</section>
-)
+	<StaticQuery
+		query={graphql`
+			query {
+				allWordpressPage {
+					edges {
+						node {
+							id
+							title
+							excerpt
+							slug
+							date(formatString: "MMMM DD, YYYY")
+						}
+					}
+				}
+			}
+		`}
+		render={data => (
+			<section css={bannerContent}>
+				<img src={HandImage} alt="" css={handImageBox} />
+				<H1 css={bannerTitle}>
+					ALL PROJECTS DELIVERED ON TIME, ON BUDGET, & ON SCOPE.
+				</H1>
+				<Guarantee />
+				<LogoList />
+			</section>
+		)}
+	/>
+);
 
 //STYLES BLOCK
 const bannerContent = props => css`
@@ -27,7 +47,7 @@ const bannerContent = props => css`
 	${props.breakpoint['phone']} {
 		margin-top: 10%;
 	}
-`
+`;
 
 const bannerTitle = props => css`
 	margin-bottom: 80px;
@@ -35,7 +55,7 @@ const bannerTitle = props => css`
 	${props.breakpoint['phone']} {
 		margin-bottom: 10%;
 	}
-`
+`;
 
 const handImageBox = props => css`
 	opacity: 0;
@@ -48,7 +68,7 @@ const handImageBox = props => css`
 	${props.breakpoint['large']} {
 		opacity: 1;
 	}
-`
+`;
 //END STYLES
 
-export default Banner
+export default Banner;
