@@ -1,27 +1,28 @@
-import React from 'react'
-import { css } from '@emotion/core'
+import React from 'react';
+import { css } from '@emotion/core';
 
-import ServiceHeader from './ServiceHeader'
-import ServiceList from './ServiceList'
+import ServiceHeader from './ServiceHeader';
+import ServiceList from './ServiceList';
 
 /*
 TODO: remove with graphQl integration
 */
-const data = [
-	{
-		title: 'DESIGN',
-		list: ['USER INTERFACE', 'USER EXPERIENCE', 'RESPONSIVE DESIGN'],
-	},
-	{
-		title: 'DEVELOPMENT',
-		list: ['USER INTERFACE', 'USER EXPERIENCE', 'RESPONSIVE DESIGN'],
-	},
-]
+// const data = [
+// 	{
+// 		title: 'DESIGN',
+// 		list: ['USER INTERFACE', 'USER EXPERIENCE', 'RESPONSIVE DESIGN'],
+// 	},
+// 	{
+// 		title: 'DEVELOPMENT',
+// 		list: ['USER INTERFACE', 'USER EXPERIENCE', 'RESPONSIVE DESIGN'],
+// 	}
+// ]
 
-const Services = () => (
+const Services = data => (
 	<React.Fragment>
 		<section css={serviceContent}>
-			{data.map((service, index) => (
+			{console.log(data.data)}
+			{data.data.map((service, index) => (
 				<article css={serviceBlock} key={service.title.toLowerCase()}>
 					<ServiceHeader title={service.title} number={`0${index + 1}`} />
 					<ServiceList list={service.list} />
@@ -29,7 +30,7 @@ const Services = () => (
 			))}
 		</section>
 	</React.Fragment>
-)
+);
 
 //STYLES BLOCK
 const serviceContent = props => css`
@@ -46,7 +47,7 @@ const serviceContent = props => css`
 		max-width: 850px;
 		width: 100%;
 	}
-`
+`;
 
 const serviceBlock = props => css`
 	alig-items: center;
@@ -61,7 +62,7 @@ const serviceBlock = props => css`
 		margin-bottom: 0;
 		margin-bottom: 50px;
 	}
-`
+`;
 //END STYLES BLOCK
 
-export default Services
+export default Services;

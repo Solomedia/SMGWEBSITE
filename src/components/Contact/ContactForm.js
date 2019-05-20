@@ -12,7 +12,13 @@ const ContactForm = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				allWordpressPost {
+				allWordpressPost(
+					filter: {
+						categories: {
+							elemMatch: { id: { eq: "2835c6c5-35d3-58b2-91d4-1bc168cc13d3" } }
+						}
+					}
+				) {
 					edges {
 						node {
 							categories {
@@ -54,14 +60,12 @@ const ContactForm = () => (
 								<option value="">SERVICES</option>
 								{data.allWordpressPost.edges.map(key => {
 									return (
-										key.node.categories[0].name === 'Services' && (
-											<option
-												key={key.node.acf.service}
-												value={key.node.acf.service}
-											>
-												{key.node.acf.service}
-											</option>
-										)
+										<option
+											key={key.node.acf.service}
+											value={key.node.acf.service}
+										>
+											{key.node.acf.service}
+										</option>
 									);
 								})}
 							</Field>

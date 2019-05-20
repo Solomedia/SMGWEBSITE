@@ -8,27 +8,24 @@ import SliderSettings from './SliderSettings';
 
 const SliderTeam = ({ data }) => (
 	<Slider {...SliderSettings}>
-		{data.map(
-			employee =>
-				employee.node.categories[0].name === 'Team' && (
-					<article css={sliderItem} key={employee.node.acf.name}>
-						<div css={employeeThumbnail}>
-							<img
-								src={employee.node.acf.image.source_url}
-								alt={employee.node.acf.name}
-							/>
-						</div>
-						<div css={infoBox}>
-							<h2>{employee.node.acf.name}</h2>
-							<h3>{employee.node.acf.position}</h3>
-							<i className="icon-arrow-right" />
-							<P large left sizeSmall="4vw">
-								<strong>BIO:</strong> {employee.node.acf.bio}
-							</P>
-						</div>
-					</article>
-				)
-		)}
+		{data.map(employee => (
+			<article css={sliderItem} key={employee.node.acf.name}>
+				<div css={employeeThumbnail}>
+					<img
+						src={employee.node.acf.employee_picture.source_url}
+						alt={employee.node.acf.name}
+					/>
+				</div>
+				<div css={infoBox}>
+					<h2>{employee.node.acf.name}</h2>
+					<h3>{employee.node.acf.position}</h3>
+					<i className="icon-arrow-right" />
+					<P large left sizeSmall="4vw">
+						<strong>BIO:</strong> {employee.node.acf.bio}
+					</P>
+				</div>
+			</article>
+		))}
 	</Slider>
 );
 

@@ -1,20 +1,20 @@
-import React from 'react'
-import { css } from '@emotion/core'
+import React from 'react';
+import { css } from '@emotion/core';
 
-import { P } from '../../utils/type'
-import Button from '../../utils/buttons'
+import { P } from '../../utils/type';
+import Button from '../../utils/buttons';
 
-const technologies = [
-	'PROGRESSIVE <br> WEB APPS',
-	'PROGRAMS',
-	'WEBSITES',
-	'APPLICATIONS',
-]
+// const technologies = [
+// 	'PROGRESSIVE <br> WEB APPS',
+// 	'PROGRAMS',
+// 	'WEBSITES',
+// 	'APPLICATIONS',
+// ]
 
-const Technologies = () => (
+const Technologies = data => (
 	<section css={technologiesSection}>
 		<ul css={technologiesList}>
-			{technologies.map(item => (
+			{data.data.map(item => (
 				<li
 					css={technologiesItem}
 					key={item.toLowerCase().trim()}
@@ -27,7 +27,7 @@ const Technologies = () => (
 			<Button>LET’S TALK.</Button>
 		</footer>
 	</section>
-)
+);
 
 //STYLES BLOCK
 const technologiesSection = props => css`
@@ -37,7 +37,7 @@ const technologiesSection = props => css`
 	${props.breakpoint['desktop']} {
 		margin-top: 50px;
 	}
-`
+`;
 
 const technologiesList = props => css`
 	display: inline-flex;
@@ -47,7 +47,7 @@ const technologiesList = props => css`
 	${props.breakpoint['tablet']} {
 		justify-content: space-between;
 	}
-`
+`;
 
 const technologiesItem = props => css`
 	color: ${props.color.secondary};
@@ -89,7 +89,7 @@ const technologiesItem = props => css`
 		font-size: 30px;
 		line-height: 42px;
 	}
-`
+`;
 
 const footer = props => css`
 	margin-top: 50px;
@@ -98,7 +98,7 @@ const footer = props => css`
 		color: ${props.color.secondary};
 		margin-bottom: 20px;
 	}
-`
+`;
 //END STYLES BLOCK
 
-export default Technologies
+export default Technologies;

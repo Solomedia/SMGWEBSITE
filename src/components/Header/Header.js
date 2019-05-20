@@ -10,18 +10,25 @@ const Header = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				allWordpressPost {
+				allWordpressPost(
+					filter: {
+						categories: {
+							elemMatch: { id: { eq: "aaba96cf-8f3a-5610-856f-b9844d1fe641" } }
+						}
+					}
+				) {
 					edges {
 						node {
 							categories {
 								name
+								id
 							}
 							acf {
 								title
 								description
 								phone
 								email_address
-								logo {
+								image_logo {
 									source_url
 								}
 							}
@@ -32,22 +39,47 @@ const Header = () => (
 		`}
 		render={data => (
 			<header>
-				{console.log(data)}
 				<Container>
 					<Row>
 						<Col>
 							<section css={HeaderContent}>
 								<div css={lefCol}>
-									<H3 css={subTitle}>SOLO MEDIA GROUP</H3>
-									<H3 css={customTitles}>DESIGN & DEVELOPMENT AGENCY</H3>
+									<H3 css={subTitle}>
+										{data.allWordpressPost.edges[0].node.acf.title}
+									</H3>
+									<H3 css={customTitles}>
+										{data.allWordpressPost.edges[0].node.acf.description}
+									</H3>
 								</div>
-								<Logo />
+								<img
+									css={image}
+									src={
+										data.allWordpressPost.edges[0].node.acf.image_logo
+											.source_url
+									}
+									alt="Logo"
+								/>
 								<div css={rightCol}>
-									<a css={anchor} href="tel:+1 917 310 1803">
-										<H3 css={subTitle}>CALL: +1 917 310 1803</H3>
+									<a
+										css={anchor}
+										href={`tel:${
+											data.allWordpressPost.edges[0].node.acf.phone
+										}`}
+									>
+										<H3 css={subTitle}>
+											CALL: {data.allWordpressPost.edges[0].node.acf.phone}
+										</H3>
 									</a>
-									<a css={anchor} href="mailto:INFO@SOLOMEDIAGROUP.CO">
-										<H3 css={customTitles}>E-MAIL: INFO@SOLOMEDIAGROUP.CO</H3>
+									<a
+										css={anchor}
+										href={`mailto:${
+											data.allWordpressPost.edges[0].node.acf.email_address
+										}`}
+									>
+										<H3 css={customTitles}>
+											E-MAIL:{' '}
+											{data.allWordpressPost.edges[0].node.acf.email_address}
+										</H3>
 									</a>
 								</div>
 							</section>
@@ -76,6 +108,11 @@ const HeaderContent = props => css`
 
 const headerCol = css`
 	margin-bottom: 10px;
+`;
+
+const image = css`
+	margin-left: 10px;
+	margin-right: 10px;
 `;
 
 const rightCol = props => css`
