@@ -10,11 +10,18 @@ const MeetTheTeam = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				allWordpressPost {
+				allWordpressPost(
+					filter: {
+						categories: {
+							elemMatch: { id: { eq: "9257f80d-adf8-52a7-99f3-077def712e46" } }
+						}
+					}
+				) {
 					edges {
 						node {
 							categories {
 								name
+								id
 							}
 							acf {
 								name

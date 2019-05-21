@@ -1,8 +1,8 @@
-import React from 'react'
-import { css } from '@emotion/core'
+import React from 'react';
+import { css } from '@emotion/core';
 
-import ClientQuote from './ClientQuote'
-import { H1, P } from '../../utils/type'
+import ClientQuote from './ClientQuote';
+import { H1, P } from '../../utils/type';
 
 const Clients = () => (
 	<section css={clientSection}>
@@ -15,7 +15,7 @@ const Clients = () => (
 			<ClientQuote />
 		</div>
 	</section>
-)
+);
 
 //STYLES BLOCK
 const clientSection = props => css`
@@ -23,14 +23,14 @@ const clientSection = props => css`
 	display: flex;
 	height: 100%;
 	justify-content: flex-end;
-`
+`;
 
 const clientContent = props => css`
 	padding: 50px 25px;
 
 	${props.breakpoint['tablet']} {
 		max-width: 720px;
-		padding: 175px 25px 135px;
+		padding: 175px 100px 135px 0px;
 	}
 
 	h1,
@@ -40,7 +40,7 @@ const clientContent = props => css`
 		color: ${props.color.secondary};
 		position: relative;
 	}
-`
+`;
 
 const header = props => css`
 	margin-bottom: 5%;
@@ -53,7 +53,7 @@ const header = props => css`
 	${props.breakpoint['medium']} {
 		font-size: 43px;
 	}
-`
+`;
 //END STYLES BLOCK
 
-export default Clients
+export default Clients;

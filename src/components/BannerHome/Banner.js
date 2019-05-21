@@ -11,14 +11,25 @@ const Banner = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				allWordpressPage {
+				allWordpressPost(
+					filter: {
+						categories: {
+							elemMatch: { id: { eq: "19464e72-7733-57a6-816f-a20c31fd7ceb" } }
+						}
+					}
+				) {
 					edges {
 						node {
-							id
-							title
-							excerpt
-							slug
-							date(formatString: "MMMM DD, YYYY")
+							categories {
+								name
+								id
+							}
+							acf {
+								banner_text
+								image_banner {
+									source_url
+								}
+							}
 						}
 					}
 				}
@@ -26,9 +37,13 @@ const Banner = () => (
 		`}
 		render={data => (
 			<section css={bannerContent}>
-				<img src={HandImage} alt="" css={handImageBox} />
+				<img
+					src={data.allWordpressPost.edges[0].node.acf.image_banner.source_url}
+					alt="Banner"
+					css={handImageBox}
+				/>
 				<H1 css={bannerTitle}>
-					ALL PROJECTS DELIVERED ON TIME, ON BUDGET, & ON SCOPE.
+					{data.allWordpressPost.edges[0].node.acf.banner_text}
 				</H1>
 				<Guarantee />
 				<LogoList />
