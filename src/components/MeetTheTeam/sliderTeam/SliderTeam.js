@@ -14,7 +14,7 @@ const SliderTeam = ({ data }) => (
 					<article css={sliderItem} key={employee.node.acf.name}>
 						<div css={employeeThumbnail}>
 							<img
-								src={employee.node.acf.image.source_url}
+								src={employee.node.acf.employee_picture.source_url}
 								alt={employee.node.acf.name}
 							/>
 						</div>

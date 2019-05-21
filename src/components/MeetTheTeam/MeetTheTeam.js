@@ -18,12 +18,10 @@ const MeetTheTeam = () => (
 							}
 							acf {
 								name
-								experience
 								position
 								bio
 								email
-								linkedin
-								image {
+								employee_picture {
 									source_url
 								}
 							}

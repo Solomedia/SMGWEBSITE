@@ -21,7 +21,7 @@ const Header = () => (
 								description
 								phone
 								email_address
-								logo {
+								image_logo {
 									source_url
 								}
 							}
