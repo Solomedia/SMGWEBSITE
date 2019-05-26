@@ -11,11 +11,7 @@ const MeetTheTeam = () => (
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: {
-						categories: {
-							elemMatch: { id: { eq: "9257f80d-adf8-52a7-99f3-077def712e46" } }
-						}
-					}
+					filter: { categories: { elemMatch: { name: { eq: "Team" } } } }
 				) {
 					edges {
 						node {
