@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		title: `Solo Media Group`,
+		description: `Solo Media Group- We help brands make money and look good doing it.`,
+		author: `Solo Media Group`
 	},
 	plugins: [
 		{
