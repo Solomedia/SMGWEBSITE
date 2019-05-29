@@ -24,7 +24,9 @@ const Technologies = data => (
 		</ul>
 		<footer css={footer}>
 			<P large>READY TO GET STARTED?</P>
-			<Button>LET’S TALK.</Button>
+			<a href="/#contactUs">
+				<Button>LET’S TALK.</Button>
+			</a>
 		</footer>
 	</section>
 );
