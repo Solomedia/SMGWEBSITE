@@ -13,11 +13,7 @@ const ContactForm = () => (
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: {
-						categories: {
-							elemMatch: { id: { eq: "2835c6c5-35d3-58b2-91d4-1bc168cc13d3" } }
-						}
-					}
+					filter: { categories: { elemMatch: { name: { eq: "Services" } } } }
 				) {
 					edges {
 						node {

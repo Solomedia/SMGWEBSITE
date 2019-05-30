@@ -12,11 +12,7 @@ const WhatWeDo = () => (
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: {
-						categories: {
-							elemMatch: { id: { eq: "8c80d100-313b-5a99-be2a-5d3a565b0343" } }
-						}
-					}
+					filter: { categories: { elemMatch: { name: { eq: "Work" } } } }
 				) {
 					edges {
 						node {

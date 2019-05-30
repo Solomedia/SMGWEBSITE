@@ -12,11 +12,7 @@ const Banner = () => (
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: {
-						categories: {
-							elemMatch: { id: { eq: "19464e72-7733-57a6-816f-a20c31fd7ceb" } }
-						}
-					}
+					filter: { categories: { elemMatch: { name: { eq: "Banner" } } } }
 				) {
 					edges {
 						node {
