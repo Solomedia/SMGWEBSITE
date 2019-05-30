@@ -38,7 +38,13 @@ const ContactForm = () => (
 				validationSchema={contactSchema}
 				onSubmit={values => {
 					// same shape as initial values
-					alert(values);
+					// curl -s --user 'api:2ec2550ec77ca51ae0e79752033d2889-39bc661a-598ce6c6' \
+					// https://api.mailgun.net/v3/sandbox7ee040b8258d4b9495243909c7af9509.mailgun.org/messages \
+					// -F from='Excited User <mailgun@sandbox7ee040b8258d4b9495243909c7af9509.mailgun.org>' \
+					// -F to=YOU@sandbox7ee040b8258d4b9495243909c7af9509.mailgun.org \
+					// -F to=antoniogm14@gmail.com \
+					// -F subject='Hello' \
+					// -F text='Testing some Mailgun awesomeness!'
 				}}
 			>
 				{({ errors, touched }) => (
