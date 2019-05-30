@@ -8,12 +8,21 @@ import { contactSchema, initialValues } from './ContactValidation';
 import Button from '../../utils/buttons';
 import { StaticQuery, graphql } from 'gatsby';
 
+const mailgun = require('mailgun-js');
+const api_key = 'fgh';
+const DOMAIN = 'YOUR_DOMAIN_NAME';
+const mg = mailgun({ apiKey: api_key, domain: DOMAIN });
+
 const ContactForm = () => (
 	<StaticQuery
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: { categories: { elemMatch: { name: { eq: "Services" } } } }
+					filter: {
+						categories: {
+							elemMatch: { id: { eq: "2835c6c5-35d3-58b2-91d4-1bc168cc13d3" } }
+						}
+					}
 				) {
 					edges {
 						node {
@@ -34,13 +43,15 @@ const ContactForm = () => (
 				validationSchema={contactSchema}
 				onSubmit={values => {
 					// same shape as initial values
-					// curl -s --user 'api:2ec2550ec77ca51ae0e79752033d2889-39bc661a-598ce6c6' \
-					// https://api.mailgun.net/v3/sandbox7ee040b8258d4b9495243909c7af9509.mailgun.org/messages \
-					// -F from='Excited User <mailgun@sandbox7ee040b8258d4b9495243909c7af9509.mailgun.org>' \
-					// -F to=YOU@sandbox7ee040b8258d4b9495243909c7af9509.mailgun.org \
-					// -F to=antoniogm14@gmail.com \
-					// -F subject='Hello' \
-					// -F text='Testing some Mailgun awesomeness!'
+					const data = {
+						from: 'Excited User <me@samples.mailgun.org>',
+						to: 'bar@example.com, YOU@YOUR_DOMAIN_NAME',
+						subject: 'Hello',
+						text: 'Testing some Mailgun awesomness!'
+					};
+					mg.messages().send(data, function(error, body) {
+						// console.log(body);
+					});
 				}}
 			>
 				{({ errors, touched }) => (
