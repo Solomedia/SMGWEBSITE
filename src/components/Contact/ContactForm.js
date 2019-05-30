@@ -43,15 +43,16 @@ const ContactForm = () => (
 				validationSchema={contactSchema}
 				onSubmit={values => {
 					// same shape as initial values
-					const data = {
-						from: 'Excited User <me@samples.mailgun.org>',
-						to: 'bar@example.com, YOU@YOUR_DOMAIN_NAME',
-						subject: 'Hello',
-						text: 'Testing some Mailgun awesomness!'
-					};
-					mg.messages().send(data, function(error, body) {
-						// console.log(body);
-					});
+					location.href(
+						'/send-mail.php?name=' +
+							values.name +
+							'&email=' +
+							values.email +
+							'&services=' +
+							values.services +
+							'&message=' +
+							values.projectSummary
+					);
 				}}
 			>
 				{({ errors, touched }) => (

@@ -28,13 +28,13 @@ module.exports = {
 				hostingWPCOM: false,
 				// If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
 				// This feature is untested for sites hosted on WordPress.com
-				useACF: true
+				useACF: true,
 				// Search and Replace Urls across WordPress content.
 
-				// searchAndReplaceContentUrls: {
-				// 	sourceUrl: 'https://wp.solomediagroup.co',
-				// 	replacementUrl: 'https://d33g8nxzjr67v0.cloudfront.net'
-				// }
+				searchAndReplaceContentUrls: {
+					sourceUrl: 'https://wp.solomediagroup.co',
+					replacementUrl: 'https://d33g8nxzjr67v0.cloudfront.net'
+				}
 			}
 		},
 		`gatsby-plugin-react-helmet`,
