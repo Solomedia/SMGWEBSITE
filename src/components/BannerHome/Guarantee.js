@@ -13,7 +13,9 @@ const Guarantee = () => (
 		</div>
 
 		<div>
-			<Button>Let&#39;s Talk</Button>
+			<a href="/#contactUs">
+				<Button>Let&#39;s Talk</Button>
+			</a>
 		</div>
 	</React.Fragment>
 );

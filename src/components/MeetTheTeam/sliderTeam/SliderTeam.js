@@ -10,7 +10,32 @@ const SliderTeam = ({ data }) => (
 	<Slider {...SliderSettings}>
 		{data.map(
 			employee =>
-				employee.node.categories[0].name === 'Team' && (
+				employee.node.categories[0].name === 'Team' &&
+				employee.node.acf.employee_picture.source_url !==
+					'https://wp.solomediagroup.co/wp-content/uploads/2019/05/place-holder-smg.png' && (
+					<article css={sliderItem} key={employee.node.acf.name}>
+						<div css={employeeThumbnail}>
+							<img
+								src={employee.node.acf.employee_picture.source_url}
+								alt={employee.node.acf.name}
+							/>
+						</div>
+						<div css={infoBox}>
+							<h2>{employee.node.acf.name}</h2>
+							<h3>{employee.node.acf.position}</h3>
+							<i className="icon-arrow-right" />
+							<P large left sizeSmall="4vw">
+								<strong>BIO:</strong> {employee.node.acf.bio}
+							</P>
+						</div>
+					</article>
+				)
+		)}
+		{data.map(
+			employee =>
+				employee.node.categories[0].name === 'Team' &&
+				employee.node.acf.employee_picture.source_url ===
+					'https://wp.solomediagroup.co/wp-content/uploads/2019/05/place-holder-smg.png' && (
 					<article css={sliderItem} key={employee.node.acf.name}>
 						<div css={employeeThumbnail}>
 							<img

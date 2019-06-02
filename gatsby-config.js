@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		title: `Solo Media Group`,
+		description: `Solo Media Group- We help brands make money and look good doing it.`,
+		author: `Solo Media Group`
 	},
 	plugins: [
 		{
@@ -18,7 +18,7 @@ module.exports = {
 				 * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
 				 * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
 				 */
-				baseUrl: `solomediagroup.co`,
+				baseUrl: `wp.solomediagroup.co`,
 				// The protocol. This can be http or https.
 				protocol: `https`,
 				// Indicates whether the site is hosted on wordpress.com.
@@ -28,7 +28,12 @@ module.exports = {
 				hostingWPCOM: false,
 				// If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
 				// This feature is untested for sites hosted on WordPress.com
-				useACF: true
+				useACF: true,
+				// Search and Replace Urls across WordPress content.
+				searchAndReplaceContentUrls: {
+					sourceUrl: 'https://wp.solomediagroup.co',
+					replacementUrl: 'https://d33g8nxzjr67v0.cloudfront.net'
+				}
 			}
 		},
 		`gatsby-plugin-react-helmet`,

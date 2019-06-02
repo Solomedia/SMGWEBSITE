@@ -11,11 +11,7 @@ const Header = () => (
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: {
-						categories: {
-							elemMatch: { id: { eq: "aaba96cf-8f3a-5610-856f-b9844d1fe641" } }
-						}
-					}
+					filter: { categories: { elemMatch: { name: { eq: "Header" } } } }
 				) {
 					edges {
 						node {
