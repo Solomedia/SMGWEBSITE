@@ -36,6 +36,9 @@ module.exports = {
 				}
 			}
 		},
+		{
+			resolve: 'gatsby-plugin-zopfli'
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
