@@ -25,7 +25,7 @@ module.exports = {
 				exclude: ['/preview/**', '/do-not-track/me/too/'],
 				sampleRate: 5,
 				siteSpeedSampleRate: 10,
-				cookieDomain: 'solomediagroup.co'
+				cookieDomain: 'https://www.solomediagroup.co/'
 			}
 		},
 		{
