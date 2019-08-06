@@ -8,12 +8,21 @@ import { contactSchema, initialValues } from './ContactValidation';
 import Button from '../../utils/buttons';
 import { StaticQuery, graphql } from 'gatsby';
 
+const mailgun = require('mailgun-js');
+const api_key = 'fgh';
+const DOMAIN = 'YOUR_DOMAIN_NAME';
+const mg = mailgun({ apiKey: api_key, domain: DOMAIN });
+
 const ContactForm = () => (
 	<StaticQuery
 		query={graphql`
 			query {
 				allWordpressPost(
-					filter: { categories: { elemMatch: { name: { eq: "Services" } } } }
+					filter: {
+						categories: {
+							elemMatch: { id: { eq: "2835c6c5-35d3-58b2-91d4-1bc168cc13d3" } }
+						}
+					}
 				) {
 					edges {
 						node {
@@ -34,7 +43,16 @@ const ContactForm = () => (
 				validationSchema={contactSchema}
 				onSubmit={values => {
 					// same shape as initial values
-					alert(values);
+					location.href(
+						'/send-mail.php?name=' +
+							values.name +
+							'&email=' +
+							values.email +
+							'&services=' +
+							values.services +
+							'&message=' +
+							values.projectSummary
+					);
 				}}
 			>
 				{({ errors, touched }) => (

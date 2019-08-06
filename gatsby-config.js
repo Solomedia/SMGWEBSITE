@@ -30,6 +30,7 @@ module.exports = {
 				// This feature is untested for sites hosted on WordPress.com
 				useACF: true,
 				// Search and Replace Urls across WordPress content.
+
 				searchAndReplaceContentUrls: {
 					sourceUrl: 'https://wp.solomediagroup.co',
 					replacementUrl: 'https://d33g8nxzjr67v0.cloudfront.net'
